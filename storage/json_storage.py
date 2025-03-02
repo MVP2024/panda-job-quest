@@ -74,19 +74,9 @@ class JSONStorage(AbstractStorage):
             json.dump(vacancies, f, ensure_ascii=False, indent=2)
 
     def _match_criteria(self, vacancy: Dict[str, Any], criteria: Dict[str, Any]) -> bool:
-        """
-        Проверка соответствия вакансии критериям с нечетким поиском
+        return all(
+            str(value).lower() in str(vacancy.get(key, '')).lower()
+            for key, value in criteria.items()
+        )
 
-        :param vacancy: Вакансия
-        :param criteria: Критерии
-        :return: Результат проверки
-        """
-        for key, value in criteria.items():
-            # Приводим значения к нижнему регистру для нечеткого поиска
-            vacancy_value = str(vacancy.get(key, '')).lower()
-            search_value = str(value).lower()
-
-            if search_value not in vacancy_value:
-                return False
-        return True
 

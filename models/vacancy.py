@@ -35,18 +35,13 @@ class Vacancy:
         self._validate_data()
 
     def to_dict(self) -> Dict[str, Any]:
-        """
-        Преобразование вакансии в словарь для сериализации
-        """
         return {
             'title': self._title,
             'url': self._url,
-            'salary': {
-                'from': self.salary or 0,
-                'to': None
-            },
+            'salary': self._salary,
             'description': self._description
         }
+
 
     def _validate_data(self) -> None:
         """
