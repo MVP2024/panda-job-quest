@@ -1,7 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Optional, Dict, Any
 
-
 @dataclass
 class Vacancy:
     """
@@ -16,11 +15,8 @@ class Vacancy:
 
     def __post_init__(self):
         """
-        Валидация данных после инициализации
+        Метод, вызываемый после инициализации dataclass
         """
-        self._title = self.title
-        self._url = self.url or ''
-
         # Обработка зарплаты
         if isinstance(self.salary, dict):
             # Если зарплата из API HH
@@ -35,13 +31,17 @@ class Vacancy:
         self._validate_data()
 
     def to_dict(self) -> Dict[str, Any]:
+        """
+        Преобразование вакансии в словарь
+
+        :return: Словарь с данными вакансии
+        """
         return {
             'title': self._title,
             'url': self._url,
             'salary': self._salary,
             'description': self._description
         }
-
 
     def _validate_data(self) -> None:
         """
@@ -53,8 +53,15 @@ class Vacancy:
         if not self._url:
             raise ValueError("URL вакансии не может быть пустым")
 
-    def __init__(self):
-        self._url = None
+    def format_salary(self) -> str:
+        """
+        Форматирование зарплаты для красивого отображения
+
+        :return: Отформатированная строка зарплаты
+        """
+        if self.salary is None or self.salary == 0:
+            return "Зарплата не указана"
+        return f"{self.salary:,.2f} руб."
 
     @property
     def title(self) -> str:
@@ -91,20 +98,33 @@ class Vacancy:
         return self._salary
 
     @salary.setter
-    def salary(self, value: Optional[float]) -> None:
+    def salary(self, value: Optional[Dict[str, Any]]) -> None:
         """
         Setter для свойства salary с валидацией
 
         :param value: Новое значение зарплаты
         """
-        if value is not None and value < 0:
-            raise ValueError("Зарплата не может быть отрицательной")
-        self._salary = value if value is not None else 0.0
-
+        if isinstance(value, dict):
+            # Если зарплата из API HH
+            salary_from = value.get('from', 0) or 0
+            salary_to = value.get('to', 0) or 0
+            self._salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
+        else:
+            # Если зарплата передана напрямую
+            self._salary = value if value is not None else 0.0
 
     @property
     def description(self) -> str:
         return self._description
+
+    @description.setter
+    def description(self, value: str) -> None:
+        """
+        Setter для свойства description с валидацией
+
+        :param value: Новое описание
+        """
+        self._description = value or 'Описание отсутствует'
 
     def __lt__(self, other: 'Vacancy') -> bool:
         """
@@ -117,8 +137,10 @@ class Vacancy:
             return NotImplemented
 
         # Безопасное сравнение зарплат
-        return (self._salary or 0) < (other._salary or 0)
+        self_salary = self.salary if self.salary is not None else 0
+        other_salary = other.salary if other.salary is not None else 0
 
+        return self_salary < other_salary
 
     def __repr__(self) -> str:
         """

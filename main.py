@@ -9,7 +9,7 @@ def main():
 	try:
 		# Тестирование API
 		hh_api = HeadHunterAPI()
-		vacancies = hh_api.get_vacancies("Электрик")
+		vacancies = hh_api.get_vacancies("Python - разработчик")
 
 		for vacancy in vacancies:
 			print(f"Название: {vacancy['name']}")

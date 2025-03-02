@@ -78,5 +78,3 @@ class JSONStorage(AbstractStorage):
             str(value).lower() in str(vacancy.get(key, '')).lower()
             for key, value in criteria.items()
         )
-
-
