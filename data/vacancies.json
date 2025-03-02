@@ -1,1 +1,602 @@
-{"items":[{"id":"93353083","premium":false,"name":"Тестировщик комфорта квартир","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"26","name":"Воронеж","url":"https://api.hh.ru/areas/26"},"salary":{"from":350000,"to":450000,"currency":"RUR","gross":false},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-16T14:58:28+0300","created_at":"2024-02-16T14:58:28+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93353083","branding":{"type":"CONSTRUCTOR","tariff":"BASIC"},"show_logo_in_search":true,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93353083?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93353083","relations":[],"employer":{"id":"3499705","name":"Специализированный застройщик BM GROUP","url":"https://api.hh.ru/employers/3499705","alternate_url":"https://hh.ru/employer/3499705","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/1214854.png","240":"https://hhcdn.ru/employer-logo/6479866.png","90":"https://hhcdn.ru/employer-logo/6479865.png"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=3499705","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Занимать активную жизненную позицию, уметь активно танцевать и громко петь. Обладать навыками коммуникации, чтобы налаживать добрососедские отношения. Обладать системным мышлением...","responsibility":"Оценивать вид из окна: встречать рассветы на кухне, и провожать алые закаты в спальне. Оценивать инфраструктуру района: ежедневно ходить на..."},"contacts":null,"schedule":{"id":"flexible","name":"Гибкий график"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"107","name":"Руководитель проектов"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92223756","premium":false,"name":"Удаленный диспетчер чатов (в Яндекс)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"113","name":"Россия","url":"https://api.hh.ru/areas/113"},"salary":{"from":30000,"to":44000,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T17:37:04+0300","created_at":"2024-01-25T17:37:04+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92223756","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/92223756?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92223756","relations":[],"employer":{"id":"9498120","name":"Яндекс Команда для бизнеса","url":"https://api.hh.ru/employers/9498120","alternate_url":"https://hh.ru/employer/9498120","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/1121425.jpg","90":"https://hhcdn.ru/employer-logo/6106293.jpeg","240":"https://hhcdn.ru/employer-logo/6106294.jpeg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=9498120","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Способен работать в команде. Способен принимать решения самостоятельно. Готов учиться и узнавать новое. Опыт работы в колл-центре или службе...","responsibility":"Работать с клиентами или партнерами для решения разнообразных ситуаций. Совершать звонки по их обращениям и давать письменные ответы. "},"contacts":null,"schedule":{"id":"remote","name":"Удаленная работа"},"working_days":[],"working_time_intervals":[],"working_time_modes":[{"id":"start_after_sixteen","name":"Можно начинать работать после 16:00"}],"accept_temporary":false,"professional_roles":[{"id":"40","name":"Другое"}],"accept_incomplete_resumes":true,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92223870","premium":false,"name":"Удаленный специалист службы поддержки (в Яндекс)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"113","name":"Россия","url":"https://api.hh.ru/areas/113"},"salary":{"from":30000,"to":44000,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T17:39:01+0300","created_at":"2024-01-25T17:39:01+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92223870","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/92223870?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92223870","relations":[],"employer":{"id":"9498120","name":"Яндекс Команда для бизнеса","url":"https://api.hh.ru/employers/9498120","alternate_url":"https://hh.ru/employer/9498120","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/1121425.jpg","90":"https://hhcdn.ru/employer-logo/6106293.jpeg","240":"https://hhcdn.ru/employer-logo/6106294.jpeg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=9498120","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Способен работать в команде. Способен принимать решения самостоятельно. Готов учиться и узнавать новое. Опыт работы в колл-центре или службе...","responsibility":"Работать с клиентами или партнерами для решения разнообразных ситуаций. Совершать звонки по их обращениям и давать письменные ответы. "},"contacts":null,"schedule":{"id":"remote","name":"Удаленная работа"},"working_days":[],"working_time_intervals":[],"working_time_modes":[{"id":"start_after_sixteen","name":"Можно начинать работать после 16:00"}],"accept_temporary":false,"professional_roles":[{"id":"40","name":"Другое"}],"accept_incomplete_resumes":true,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92752367","premium":false,"name":"Менеджер по продажам недвижимости","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"159","name":"Астана","url":"https://api.hh.ru/areas/159"},"salary":{"from":500000,"to":1000000,"currency":"KZT","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-06T11:30:02+0300","created_at":"2024-02-06T11:30:02+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92752367","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/92752367?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92752367","relations":[],"employer":{"id":"1418491","name":"Витрина Недвижимости","url":"https://api.hh.ru/employers/1418491","alternate_url":"https://hh.ru/employer/1418491","logo_urls":{"240":"https://hhcdn.ru/employer-logo/2935217.jpeg","90":"https://hhcdn.ru/employer-logo/2935216.jpeg","original":"https://hhcdn.ru/employer-logo-original/623516.jpg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=1418491","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Отличные коммуникативные навыки, способность найти подход к каждому клиенту. Навыки проведения деловых переговоров. Наличие амбициозных целей и успешный опыт их...","responsibility":"Анализ рынка и объектов недвижимости. Предварительная оценка недвижимости. Подбор объектов недвижимости в интересах клиентов. Консультирование клиентов по купле-продаже объектов..."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"6","name":"Агент по недвижимости"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92223673","premium":false,"name":"Менеджер чатов, удалённо (в Яндекс)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"113","name":"Россия","url":"https://api.hh.ru/areas/113"},"salary":{"from":30000,"to":44000,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T17:34:32+0300","created_at":"2024-01-25T17:34:32+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92223673","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/92223673?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92223673","relations":[],"employer":{"id":"9498120","name":"Яндекс Команда для бизнеса","url":"https://api.hh.ru/employers/9498120","alternate_url":"https://hh.ru/employer/9498120","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/1121425.jpg","90":"https://hhcdn.ru/employer-logo/6106293.jpeg","240":"https://hhcdn.ru/employer-logo/6106294.jpeg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=9498120","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Способен работать в команде. Способен принимать решения самостоятельно. Готов учиться и узнавать новое. Опыт работы в колл-центре или службе...","responsibility":"Работать с клиентами или партнерами для решения разнообразных ситуаций. Совершать звонки по их обращениям и давать письменные ответы. "},"contacts":null,"schedule":{"id":"remote","name":"Удаленная работа"},"working_days":[],"working_time_intervals":[],"working_time_modes":[{"id":"start_after_sixteen","name":"Можно начинать работать после 16:00"}],"accept_temporary":false,"professional_roles":[{"id":"40","name":"Другое"}],"accept_incomplete_resumes":true,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93209001","premium":false,"name":"Бортпроводник","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"2759","name":"Ташкент","url":"https://api.hh.ru/areas/2759"},"salary":null,"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-14T12:32:06+0300","created_at":"2024-02-14T12:32:06+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93209001","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93209001?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93209001","relations":[],"employer":{"id":"4621904","name":"«MY FREIGHTER» LLC","url":"https://api.hh.ru/employers/4621904","alternate_url":"https://hh.ru/employer/4621904","logo_urls":{"90":"https://hhcdn.ru/employer-logo/3387665.png","240":"https://hhcdn.ru/employer-logo/3387666.png","original":"https://hhcdn.ru/employer-logo-original/736672.png"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=4621904","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Образование: среднее полное (11 классов), среднее специальное, высшее. Обязательное владение узбекским, русским и английским языками. Готовность работать согласно графику полетов. ","responsibility":"Обеспечение безопасности на борту. Встреча и размещение пассажиров на борту. Инструктаж перед взлетом. Организация питания пассажиров во время полета. "},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"159","name":"Бортпроводник"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92195003","premium":false,"name":"Наборщик текста/верстальщик","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"1002","name":"Минск","url":"https://api.hh.ru/areas/1002"},"salary":{"from":800,"to":null,"currency":"BYR","gross":false},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T11:58:58+0300","created_at":"2024-01-25T11:58:58+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92195003","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/92195003?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92195003","relations":[],"employer":{"id":"3814315","name":"ПроТекст","url":"https://api.hh.ru/employers/3814315","alternate_url":"https://hh.ru/employer/3814315","logo_urls":{"240":"https://hhcdn.ru/employer-logo/3116885.jpeg","90":"https://hhcdn.ru/employer-logo/3116884.jpeg","original":"https://hhcdn.ru/employer-logo-original/668938.jpg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=3814315","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"уверенное владение ПЭВМ (программы OCR - FineReader и аналоги, глубокое знание функций MS Word - Вставка, Макет, Конструктор таблиц). - возможность и готовность...","responsibility":"выполнение распознания документов в формате ,pdf, .jpg, .png на русском / английском языке, макетирование и форматирование в MS Word. - "},"contacts":null,"schedule":{"id":"remote","name":"Удаленная работа"},"working_days":[],"working_time_intervals":[{"id":"from_four_to_six_hours_in_a_day","name":"Можно работать сменами по 4–6 часов в день"}],"working_time_modes":[{"id":"start_after_sixteen","name":"Можно начинать работать после 16:00"}],"accept_temporary":false,"professional_roles":[{"id":"84","name":"Оператор ПК, оператор базы данных"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"part","name":"Частичная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93166058","premium":false,"name":"Менеджер по продажам (МЕРКАТОР)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"88","name":"Казань","url":"https://api.hh.ru/areas/88"},"salary":{"from":160000,"to":null,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":{"city":"Казань","street":"Приволжский район, жилой массив Отары, Дорожная улица","building":"1к10","lat":55.724135,"lng":49.098078,"description":null,"raw":"Казань, Приволжский район, жилой массив Отары, Дорожная улица, 1к10","metro":null,"metro_stations":[],"id":"15161689"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-13T19:21:57+0300","created_at":"2024-02-13T19:21:57+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93166058","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93166058?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93166058","relations":[],"employer":{"id":"1060821","name":"Рост Развитие Решение","url":"https://api.hh.ru/employers/1060821","alternate_url":"https://hh.ru/employer/1060821","logo_urls":{"90":"https://hhcdn.ru/employer-logo/874868.jpeg","240":"https://hhcdn.ru/employer-logo/874869.jpeg","original":"https://hhcdn.ru/employer-logo-original/85446.jpg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=1060821","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Опыт в продажах. Опыт работы с клиентами. Умение проводить переговоры. Мобильность.","responsibility":"Расширение клиентской базы. Проведение презентаций и переговоров. Заключение договоров. Отчетность в установленной форме."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"70","name":"Менеджер по продажам, менеджер по работе с клиентами"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"91178034","premium":false,"name":"Оператор call-центра","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"2759","name":"Ташкент","url":"https://api.hh.ru/areas/2759"},"salary":{"from":3500000,"to":20000000,"currency":"UZS","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T10:10:00+0300","created_at":"2024-01-25T10:10:00+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=91178034","insider_interview":null,"url":"https://api.hh.ru/vacancies/91178034?host=hh.ru","alternate_url":"https://hh.ru/vacancy/91178034","relations":[],"employer":{"id":"9522635","name":"IN-FIN-STROY INVEST","url":"https://api.hh.ru/employers/9522635","alternate_url":"https://hh.ru/employer/9522635","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=9522635","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Пожалуйста ознакомьтесь внимательно. Грамотная речь. Знание узбекского и русского языков. Отличное знание ПК. Коммуникабельность. Эмоциональная устойчивость. Вежливость, грамотность, любознательность, ответственность...","responsibility":"Прием и обработка входящих звонков и исходящих звонков. Консультирование клиентов по телефону. Предоставление клиентам информации о компании. Осуществление исходящих информационных..."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"83","name":"Оператор call-центра, специалист контактного центра"}],"accept_incomplete_resumes":true,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92818620","premium":false,"name":"Менеджер по работе с клиентами","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"159","name":"Астана","url":"https://api.hh.ru/areas/159"},"salary":{"from":418500,"to":1000000,"currency":"KZT","gross":true},"type":{"id":"open","name":"Открытая"},"address":{"city":"Астана","street":"улица Анет баба","building":"5","lat":51.133893,"lng":71.382854,"description":null,"raw":"Астана, улица Анет баба, 5","metro":null,"metro_stations":[],"id":"14393855"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-07T11:34:26+0300","created_at":"2024-02-07T11:34:26+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92818620","insider_interview":null,"url":"https://api.hh.ru/vacancies/92818620?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92818620","relations":[],"employer":{"id":"10013830","name":"Агентство Недвижимости Абажур","url":"https://api.hh.ru/employers/10013830","alternate_url":"https://hh.ru/employer/10013830","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=10013830","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Не важно есть опыт у тебя или нет, я могу точно сказать, что ты сможешь зарабатывать в этой сфере!!! ","responsibility":null},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"70","name":"Менеджер по продажам, менеджер по работе с клиентами"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93119114","premium":false,"name":"Стажер","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"2759","name":"Ташкент","url":"https://api.hh.ru/areas/2759"},"salary":{"from":2000000,"to":2000000,"currency":"UZS","gross":false},"type":{"id":"open","name":"Открытая"},"address":{"city":"Ташкент","street":"улица Мукими","building":"166","lat":41.295692,"lng":69.218247,"description":null,"raw":"Ташкент, улица Мукими, 166","metro":null,"metro_stations":[],"id":"5906580"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-13T08:39:43+0300","created_at":"2024-02-13T08:39:43+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93119114","insider_interview":null,"url":"https://api.hh.ru/vacancies/93119114?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93119114","relations":[],"employer":{"id":"3927191","name":"Научно информационный центр новых технологий при ГНК РУз","url":"https://api.hh.ru/employers/3927191","alternate_url":"https://hh.ru/employer/3927191","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=3927191","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Если вы , в том числе, студент по направлению IT или начинающий специалист, окончивший вуз, Вы можете принять участие в отборе...","responsibility":"Комплексная оценка будет проводиться в форме собеседования. Стажировка по направлениям Java-backend и Mobile разработчик (flutter). Участие в непосредственной работе..."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"96","name":"Программист, разработчик"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"probation","name":"Стажировка"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92405436","premium":false,"name":"Хозработник","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"2","name":"Санкт-Петербург","url":"https://api.hh.ru/areas/2"},"salary":{"from":65000,"to":70000,"currency":"RUR","gross":false},"type":{"id":"open","name":"Открытая"},"address":{"city":"Санкт-Петербург","street":"Бармалеева улица","building":"11","lat":59.964485,"lng":30.306571,"description":null,"raw":"Санкт-Петербург, Бармалеева улица, 11","metro":null,"metro_stations":[],"id":"11151437"},"response_url":null,"sort_point_distance":null,"published_at":"2024-01-30T12:59:55+0300","created_at":"2024-01-30T12:59:55+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92405436","insider_interview":null,"url":"https://api.hh.ru/vacancies/92405436?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92405436","relations":[],"employer":{"id":"3474160","name":"Нордстрой","url":"https://api.hh.ru/employers/3474160","alternate_url":"https://hh.ru/employer/3474160","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=3474160","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":null,"responsibility":"Cезонныe pаботы: убоpкa cнега, лиcтьев, кoшeниe травы, мытьe дoрoжек. Убoрка мусоpа. Прoтиpание пыли, уборка в бapбекю, в бecедке. "},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"32","name":"Дворник"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"87122346","premium":false,"name":"Продавец-консультант","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"1","name":"Москва","url":"https://api.hh.ru/areas/1"},"salary":{"from":70000,"to":110000,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-20T11:00:11+0300","created_at":"2024-02-20T11:00:11+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=87122346","branding":{"type":"MAKEUP","tariff":null},"show_logo_in_search":true,"insider_interview":null,"url":"https://api.hh.ru/vacancies/87122346?host=hh.ru","alternate_url":"https://hh.ru/vacancy/87122346","relations":[],"employer":{"id":"2524051","name":"Магазины Ароматный Мир формата food & wine","url":"https://api.hh.ru/employers/2524051","alternate_url":"https://hh.ru/employer/2524051","logo_urls":{"90":"https://hhcdn.ru/employer-logo/3752459.png","240":"https://hhcdn.ru/employer-logo/3752460.png","original":"https://hhcdn.ru/employer-logo-original/827894.png"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=2524051","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Опыт работы не требуется, мы всему научим! Опыт работы в сетевых розничных магазинах приветствуется.","responsibility":"Консультирование покупателей по ассортименту в магазине. Работа на современной и простой кассе. Выкладка продукции, оформление торгового зала рекламными материалами. "},"contacts":null,"schedule":{"id":"shift","name":"Сменный график"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"97","name":"Продавец-консультант, продавец-кассир"}],"accept_incomplete_resumes":true,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"77069438","premium":false,"name":"Менеджер по туризму","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"160","name":"Алматы","url":"https://api.hh.ru/areas/160"},"salary":{"from":180000,"to":200000,"currency":"KZT","gross":false},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-02T05:38:18+0300","created_at":"2024-02-02T05:38:18+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=77069438","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/77069438?host=hh.ru","alternate_url":"https://hh.ru/vacancy/77069438","relations":[],"employer":{"id":"686727","name":"NurAi & Co","url":"https://api.hh.ru/employers/686727","alternate_url":"https://hh.ru/employer/686727","logo_urls":{"240":"https://hhcdn.ru/employer-logo/1107573.png","90":"https://hhcdn.ru/employer-logo/1107572.png","original":"https://hhcdn.ru/employer-logo-original/152128.png"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=686727","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"умение урегулировать форс-мажорные ситуации. - умение работать в системе Битрикс для ведения процесса бронирования. Требования: - опыт работы в туризме обязателен. - ","responsibility":"консультирование клиентов по туристическим продуктам в офисе и по телефону. - обработка входящих заявок и ведение диалога с туристами. - "},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"40","name":"Другое"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"92210019","premium":false,"name":"Junior back-end developer","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"2759","name":"Ташкент","url":"https://api.hh.ru/areas/2759"},"salary":{"from":4000000,"to":8000000,"currency":"UZS","gross":true},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-01-25T14:24:55+0300","created_at":"2024-01-25T14:24:55+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=92210019","insider_interview":null,"url":"https://api.hh.ru/vacancies/92210019?host=hh.ru","alternate_url":"https://hh.ru/vacancy/92210019","relations":[],"employer":{"id":"9035038","name":"OOO UZGPS","url":"https://api.hh.ru/employers/9035038","alternate_url":"https://hh.ru/employer/9035038","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=9035038","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Высшее профильное образование. Свободное владение русским и узбекским языками. Java Core. Spring/Spring Boot. Знание ООП и структуры данных. ","responsibility":"Разрабатывать новые и поддерживать существующие продукты компании. Интегрировать сервисы и API. Написание микросервисов. Интеграции с внешними сервисами по REST, WebSocket. "},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"96","name":"Программист, разработчик"}],"accept_incomplete_resumes":false,"experience":{"id":"noExperience","name":"Нет опыта"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93523045","premium":false,"name":"Менеджер по сопровождению закупок (контрольно-измерительное оборудование)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"1","name":"Москва","url":"https://api.hh.ru/areas/1"},"salary":{"from":90000,"to":null,"currency":"RUR","gross":false},"type":{"id":"open","name":"Открытая"},"address":{"city":null,"street":null,"building":null,"lat":null,"lng":null,"description":null,"raw":null,"metro":{"station_name":"Полежаевская","line_name":"Таганско-Краснопресненская","station_id":"7.114","line_id":"7","lat":55.777201,"lng":37.517895},"metro_stations":[{"station_name":"Полежаевская","line_name":"Таганско-Краснопресненская","station_id":"7.114","line_id":"7","lat":55.777201,"lng":37.517895},{"station_name":"Хорошево","line_name":"МЦК","station_id":"95.539","line_id":"95","lat":55.777222,"lng":37.507222},{"station_name":"Хорошевская","line_name":"Большая кольцевая линия","station_id":"97.601","line_id":"97","lat":55.77643,"lng":37.51981}],"id":"14977439"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-20T11:07:12+0300","created_at":"2024-02-20T11:07:12+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93523045","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93523045?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93523045","relations":[],"employer":{"id":"827187","name":"BY business group","url":"https://api.hh.ru/employers/827187","alternate_url":"https://hh.ru/employer/827187","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/942457.jpg","240":"https://hhcdn.ru/employer-logo/4210365.jpeg","90":"https://hhcdn.ru/employer-logo/4210364.jpeg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=827187","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Высшее или средне-специальное образование. Опыт работы на позиции менеджер по закупкам от 3 лет. Знание программы 1С (Управление...","responsibility":"Получать и обрабатывать заявки. Обеспечивать своевременные поставки ТМЦ Заказчикам (закупка оборудования КИПиА и комплектующих). Контролировать поставки и своевременное выполнение обязанностей..."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"66","name":"Менеджер по закупкам"}],"accept_incomplete_resumes":true,"experience":{"id":"between3And6","name":"От 3 до 6 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93514566","premium":false,"name":"Водитель-помощник","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"159","name":"Астана","url":"https://api.hh.ru/areas/159"},"salary":{"from":300000,"to":null,"currency":"KZT","gross":false},"type":{"id":"open","name":"Открытая"},"address":{"city":"Астана","street":"улица Сауран","building":"3","lat":51.125657,"lng":71.421976,"description":null,"raw":"Астана, улица Сауран, 3","metro":null,"metro_stations":[],"id":"816768"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-20T09:52:02+0300","created_at":"2024-02-20T09:52:02+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93514566","insider_interview":null,"url":"https://api.hh.ru/vacancies/93514566?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93514566","relations":[],"employer":{"id":"2842834","name":"SNK CONSULT GROUP","url":"https://api.hh.ru/employers/2842834","alternate_url":"https://hh.ru/employer/2842834","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=2842834","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Знание английского языка (B2). Хорошие знание города ПДД. Готовность к командировкам, в том числе за границу. Пунктуальность. ","responsibility":"Мелкосрочный ремонт авто."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"21","name":"Водитель"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93254580","premium":false,"name":"Машинист буровой установки RU-75","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"102","name":"Хабаровск","url":"https://api.hh.ru/areas/102"},"salary":{"from":228000,"to":228000,"currency":"RUR","gross":false},"type":{"id":"open","name":"Открытая"},"address":{"city":"Хабаровск","street":"улица Истомина","building":"51А","lat":48.474997,"lng":135.058846,"description":null,"raw":"Хабаровск, улица Истомина, 51А","metro":null,"metro_stations":[],"id":"4898993"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-15T08:00:54+0300","created_at":"2024-02-15T08:00:54+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93254580","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93254580?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93254580","relations":[],"employer":{"id":"4987434","name":"Охотская Горно-Геологическая Компания","url":"https://api.hh.ru/employers/4987434","alternate_url":"https://hh.ru/employer/4987434","logo_urls":{"original":"https://hhcdn.ru/employer-logo-original/944456.jpg","240":"https://hhcdn.ru/employer-logo/4218361.jpeg","90":"https://hhcdn.ru/employer-logo/4218360.jpeg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=4987434","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Квалификационное удостоверение машиниста буровой установки 5 разряда. Опыт работы на буровой установки RU-75., LM-75. Проведение текущих аварийных и...","responsibility":"Бурение из буровых камер. Бурение согласно ГТН, умение подобрать породоразрушающий инструмент, монтаж на устье скважины."},"contacts":null,"schedule":{"id":"flyInFlyOut","name":"Вахтовый метод"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"63","name":"Машинист"}],"accept_incomplete_resumes":true,"experience":{"id":"between3And6","name":"От 3 до 6 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93545071","premium":false,"name":"Семейный водитель","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"1","name":"Москва","url":"https://api.hh.ru/areas/1"},"salary":{"from":120000,"to":120000,"currency":"RUR","gross":false},"type":{"id":"open","name":"Открытая"},"address":null,"response_url":null,"sort_point_distance":null,"published_at":"2024-02-20T14:19:36+0300","created_at":"2024-02-20T14:19:36+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93545071","insider_interview":null,"url":"https://api.hh.ru/vacancies/93545071?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93545071","relations":[],"employer":{"id":"2021156","name":"ТТО АМИК","url":"https://api.hh.ru/employers/2021156","alternate_url":"https://hh.ru/employer/2021156","logo_urls":null,"vacancies_url":"https://api.hh.ru/vacancies?employer_id=2021156","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"опыт работы профессиональным водителем от 10 лет, семейным водителем - от 5 лет. - наличие рекомендательных писем (обязательно). - спокойное,комфортное и безопасное...","responsibility":"работа в качестве семейного водителя. - подача автомобиля по указанному месту в обозначенное время. - планирование оптимального маршрута движения. - выполнение поручений профессионального..."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"21","name":"Водитель"}],"accept_incomplete_resumes":true,"experience":{"id":"moreThan6","name":"Более 6 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null},{"id":"93161709","premium":false,"name":"Менеджер по работе с клиентами (МЕРКАТОР)","department":null,"has_test":false,"response_letter_required":false,"area":{"id":"88","name":"Казань","url":"https://api.hh.ru/areas/88"},"salary":{"from":100000,"to":null,"currency":"RUR","gross":true},"type":{"id":"open","name":"Открытая"},"address":{"city":"Казань","street":"Приволжский район, жилой массив Отары, Дорожная улица","building":"1к10","lat":55.724135,"lng":49.098078,"description":null,"raw":"Казань, Приволжский район, жилой массив Отары, Дорожная улица, 1к10","metro":null,"metro_stations":[],"id":"15161689"},"response_url":null,"sort_point_distance":null,"published_at":"2024-02-13T17:06:04+0300","created_at":"2024-02-13T17:06:04+0300","archived":false,"apply_alternate_url":"https://hh.ru/applicant/vacancy_response?vacancyId=93161709","show_logo_in_search":null,"insider_interview":null,"url":"https://api.hh.ru/vacancies/93161709?host=hh.ru","alternate_url":"https://hh.ru/vacancy/93161709","relations":[],"employer":{"id":"1060821","name":"Рост Развитие Решение","url":"https://api.hh.ru/employers/1060821","alternate_url":"https://hh.ru/employer/1060821","logo_urls":{"90":"https://hhcdn.ru/employer-logo/874868.jpeg","240":"https://hhcdn.ru/employer-logo/874869.jpeg","original":"https://hhcdn.ru/employer-logo-original/85446.jpg"},"vacancies_url":"https://api.hh.ru/vacancies?employer_id=1060821","accredited_it_employer":false,"trusted":true},"snippet":{"requirement":"Опыт в продажах или с клиентами. Грамотная речь. Активность. Коммуникабельность.","responsibility":"Работа с клиентами. Контроль остатков инструмента на складе. Работа с дебиторской задолженностью. Отчетность в установленной форме (1С, Битрикс 24)."},"contacts":null,"schedule":{"id":"fullDay","name":"Полный день"},"working_days":[],"working_time_intervals":[],"working_time_modes":[],"accept_temporary":false,"professional_roles":[{"id":"70","name":"Менеджер по продажам, менеджер по работе с клиентами"}],"accept_incomplete_resumes":false,"experience":{"id":"between1And3","name":"От 1 года до 3 лет"},"employment":{"id":"full","name":"Полная занятость"},"adv_response_url":null,"is_adv_vacancy":false,"adv_context":null}],"found":1438900,"pages":100,"page":0,"per_page":20,"clusters":null,"arguments":null,"fixes":null,"suggests":null,"alternate_url":"https://hh.ru/search/vacancy?enable_snippets=true"}
+[
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117859339",
+    "salary": 120000.0,
+    "description": "1. Образование не ниже среднего (полного). 2. Служба в армии с категорией здоровья от А1 до Б3. 3. "
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117694500",
+    "salary": 110000.0,
+    "description": "Образование не ниже среднего полного (11 классов)."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/99917875",
+    "salary": 132500.0,
+    "description": "образование не ниже среднего."
+  },
+  {
+    "title": "Полицейский по охране физлиц",
+    "url": "https://hh.ru/vacancy/116884049",
+    "salary": 120000.0,
+    "description": "Законченное среднее полное образование (11 классов) или среднее специальное, или высшее. Отсутствие привлечение к уголовной ответственности."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117796976",
+    "salary": 110000.0,
+    "description": "Образование не ниже среднего полного (11 классов)."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117335000",
+    "salary": 132500.0,
+    "description": "Образование (среднее (полное), среднее профессиональное или высшее). Категория годности А (в индивидуальном порядке рассматривается от «Б» до «Б-4», «В»). "
+  },
+  {
+    "title": "Полицейский в спецполк",
+    "url": "https://hh.ru/vacancy/117500678",
+    "salary": 130000.0,
+    "description": "Полное среднее образование. Годность по состоянию здоровья."
+  },
+  {
+    "title": "Полицейский - кинолог",
+    "url": "https://hh.ru/vacancy/101780247",
+    "salary": 120000.0,
+    "description": "Опытные инструкторы Кинологического центра помогут разобраться начинающим кинологам в тонкостях воспитания собак, обучат сотрудников в воспитании и дрессировки служебных собак. "
+  },
+  {
+    "title": "Полицейский в Росгвардию (в составе группы задержания)",
+    "url": "https://hh.ru/vacancy/117033175",
+    "salary": 110000.0,
+    "description": "Описание отсутствует"
+  },
+  {
+    "title": "Полицейский/Инспектор",
+    "url": "https://hh.ru/vacancy/117586587",
+    "salary": 110000.0,
+    "description": "Паспорт. Среднее полное образование (11 классов, колледж или техникум). Военный билет или приписное свидетельство (для военнообязанных, категория годности А, Б..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117546995",
+    "salary": 105750.0,
+    "description": "Без ограничений по здоровью (не ниже - Б3). Опыт работы необязателен."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117735568",
+    "salary": 90000.0,
+    "description": "Среднее образование, без ограничений по здоровью."
+  },
+  {
+    "title": "Полицейский/оперуполномоченный",
+    "url": "https://hh.ru/vacancy/117540316",
+    "salary": 97500.0,
+    "description": "Среднее общее, среднее профессиональное, высшее образование."
+  },
+  {
+    "title": "Полицейский-боец ОМОН",
+    "url": "https://hh.ru/vacancy/117407706",
+    "salary": 110000.0,
+    "description": "Законченное среднее полное образование (11 классов)."
+  },
+  {
+    "title": "Полицейский Росгвардия (вневедомственная охрана)",
+    "url": "https://hh.ru/vacancy/79495947",
+    "salary": 105000.0,
+    "description": "Среднее полное образование (или колледж, техникум), служба в ВС (для военнообязанных) , способность по своим физическим и моральным качествам выполнять служебные..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117853667",
+    "salary": 121500.0,
+    "description": "Москве принимаются на службу граждане в должности <highlighttext>полицейского</highlighttext>. Требования: Годные к военной службе (для военнообязанных) по медицинскому состоянию здоровья. "
+  },
+  {
+    "title": "Полицейский Полка полиции по охране общественного порядка",
+    "url": "https://hh.ru/vacancy/115223857",
+    "salary": 115000.0,
+    "description": "Образование не ниже среднего. Годные по состоянию здоровья."
+  },
+  {
+    "title": "Полицейский (1-й специальный полк полиции ГУ МВД России по г. Москве)",
+    "url": "https://hh.ru/vacancy/104876361",
+    "salary": 130000.0,
+    "description": "Служба в армии зачисляется в стаж службы, а также 50% очного обучения (средне специальное или высшее). Требования: Образование (среднее (полное..."
+  },
+  {
+    "title": "Полицейский специального подразделения",
+    "url": "https://hh.ru/vacancy/117828302",
+    "salary": 122500.0,
+    "description": "Москве принимаются на службу граждане в должности <highlighttext>полицейского</highlighttext>. Требования: Годные к военной службе по медицинскому состоянию здоровья. Полное среднее образование..."
+  },
+  {
+    "title": "Полицейский/инспектор",
+    "url": "https://hh.ru/vacancy/117391197",
+    "salary": 110000.0,
+    "description": "Имеющие среднее (полное) образование. Без опыта работы, научим и покажем в процессе стажировки. Категория здоровья А, Б и В (индивидуально)."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117849171",
+    "salary": 125000.0,
+    "description": "Военный билет или приписное свидетельство (для военнообязанных). Образование не ниже среднего, средне специального."
+  },
+  {
+    "title": "Полицейский (Полк полиции по охране метрополитена УВД на Московском метрополитене)",
+    "url": "https://hh.ru/vacancy/117521987",
+    "salary": 47500.0,
+    "description": "Образование не ниже среднего. Годность по своим личным и деловым качествам, физической подготовки и состоянию здоровья выполнять служебные обязанности."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/104858123",
+    "salary": 115000.0,
+    "description": "Годных к строевой службе (категория здоровья не ниже Б-3). Образование не ниже среднего (полного) 11 классов. БЕЗ ОПЫТА работы..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/116493226",
+    "salary": 122500.0,
+    "description": "Требования: 1. Гражданин Российской Федерации (ст. 25 ФЗ \"О полиции\" от 07.02.2011 г.  3-ФЗ). 2. "
+  },
+  {
+    "title": "Полицейский взвода отдельной роты патрульно-постовой службы полиции",
+    "url": "https://hh.ru/vacancy/117113553",
+    "salary": 82500.0,
+    "description": "Образование не ниже среднего полного. Служба в ВС обязательна (группа здоровья А) (для военнообязанных)."
+  },
+  {
+    "title": "Оперуполномоченный/Полицейский",
+    "url": "https://hh.ru/vacancy/117384590",
+    "salary": 82500.0,
+    "description": "Образование не ниже полного среднего (11 классов), для офицерской должности среднее профессиональное или высшее. Вы годны к строевой службе в..."
+  },
+  {
+    "title": "Полицейский Росгвардии",
+    "url": "https://hh.ru/vacancy/117799533",
+    "salary": 87500.0,
+    "description": "Для военнообязанных - *обязательно служба в ВС! - годность к службе по состоянию здоровья (достаточно 4 группы предназначения; по военному билету: А..."
+  },
+  {
+    "title": "Полицейский (охранно-конвойная служба)",
+    "url": "https://hh.ru/vacancy/115852934",
+    "salary": 50000.0,
+    "description": "Гражданин Российской Федерации (ст. 25 Федерального закона \"О полиции\" от 07.02.2011  3-ФЗ). Имеешь образование не ниже среднего..."
+  },
+  {
+    "title": "Сотрудник ФС ВНГ РФ",
+    "url": "https://hh.ru/vacancy/117653399",
+    "salary": 120000.0,
+    "description": "Образование не ниже среднего полного (11 классов), либо 9 классов + 1 курс колледжа. Наличие военного билета или приписного или..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117468907",
+    "salary": 115000.0,
+    "description": "Берем бывших сотрудников и с НУК. Образование не ниже среднего. Годен по состоянию здоровья к службе."
+  },
+  {
+    "title": "Полицейский (кавалерист) 1СППГУ МВД России по г. Москве",
+    "url": "https://hh.ru/vacancy/104951149",
+    "salary": 130000.0,
+    "description": "Опыт работы с лошадьми приветствуется, если нет опыта обучим. Образование (среднее (полное), среднее профессиональное или высшее). Отслужившие в ВС (для..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117615898",
+    "salary": 42500.0,
+    "description": "Высшее образование в области права (желательно). Знание законодательства РФ. Физическая подготовка. Ответственность и исполнительность. Полное среднее образование 11 классов."
+  },
+  {
+    "title": "Полицейский (сотрудник Росгвардии)",
+    "url": "https://hh.ru/vacancy/117756409",
+    "salary": 102500.0,
+    "description": "Имеющие образование не ниже среднего (полного). Опыт работы необязателен."
+  },
+  {
+    "title": "Полицейский (боец) ОМОН",
+    "url": "https://hh.ru/vacancy/117107017",
+    "salary": 105000.0,
+    "description": "Образование не ниже полного среднего (11 классов). Годные по состоянию здоровья (Группа здоровья А, А1, Б). Положительные характеристики. "
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117859615",
+    "salary": 55000.0,
+    "description": "Москве принимаются на службу граждане в должности <highlighttext>полицейского</highlighttext>. Годные к военной службе(для военнообязанных) по медицинскому состоянию здоровья. "
+  },
+  {
+    "title": "Полицейский патрульно-постовой службы полиции",
+    "url": "https://hh.ru/vacancy/117804476",
+    "salary": 42500.0,
+    "description": "Наличие средне-специального, среднего полного образования. Годность к службе по состоянию здоровья. Физическая выносливость."
+  },
+  {
+    "title": "Полицейский (3-й батальон 1-го специального полка полиции ГУ МВД России по г. Москве)",
+    "url": "https://hh.ru/vacancy/115192778",
+    "salary": 115000.0,
+    "description": "образование не ниже полного среднего (т.е. не меньше 11 классов либо среднее профессиональное) - отслужившие в Вооружённых силах РФ. "
+  },
+  {
+    "title": "Полицейский роты",
+    "url": "https://hh.ru/vacancy/117566014",
+    "salary": 90000.0,
+    "description": "Образование не ниже среднего (полного) общего. Наличие военного билета (для военнообязанных) (категория годности А и Б, В - по рассмотрению заболеваний..."
+  },
+  {
+    "title": "Полицейский МВД",
+    "url": "https://hh.ru/vacancy/117020336",
+    "salary": 87500.0,
+    "description": "образование не ниже среднего (полного). - опыт работы не требуется."
+  },
+  {
+    "title": "Полицейский (боец)",
+    "url": "https://hh.ru/vacancy/117343305",
+    "salary": 50000.0,
+    "description": "образование среднее полное и выше."
+  },
+  {
+    "title": "Полицейский в туристическую полицию",
+    "url": "https://hh.ru/vacancy/117839039",
+    "salary": 60000.0,
+    "description": "Владение английским языком (французским, итальянским, испанским, немецким, китайским, японским). Годные по состоянию здоровья. Наличие военного билета с категорией годности \"А..."
+  },
+  {
+    "title": "Полицейский Росгвардия (вневедомственная охрана)",
+    "url": "https://hh.ru/vacancy/117656699",
+    "salary": 105000.0,
+    "description": "Среднее полное образование (или колледж, техникум), способность по своим физическим и моральным качествам выполнять служебные обязанности сотрудника полиции. - "
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117730862",
+    "salary": 84000.0,
+    "description": "Уверенный пользователь ПК. -Наличие Военного билета (приписного) (для военнообязанных). -Наличие общего среднего образования, средне-специального, высшего."
+  },
+  {
+    "title": "Полицейский (5-й Отдел полиции УВД на Московском метрополитене)",
+    "url": "https://hh.ru/vacancy/117521891",
+    "salary": 40000.0,
+    "description": "Образование не ниже среднего. Годность по своим личным и деловым качествам, физической подготовки и состоянию здоровья выполнять служебные обязанности."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/116821504",
+    "salary": 110000.0,
+    "description": "Паспорт. Среднее полное образование (11 классов, колледж или техникум). Военный билет или приписное свидетельство (для военнообязанных, категория годности А-Б..."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117378975",
+    "salary": 87500.0,
+    "description": "Образование минимум 11 классов(полное) среднее. Без ограничений по здоровью от категории А до Б-3 (для военнообязанных)."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/116771995",
+    "salary": 92500.0,
+    "description": "Полное среднее образование, отсутствие медицинских противопоказаний ( кат. А и Б для военнообязанных)."
+  },
+  {
+    "title": "Полицейский группы охраны и конвоирования подозреваемых и обвиняемых",
+    "url": "https://hh.ru/vacancy/117495442",
+    "salary": 42500.0,
+    "description": "Военный билет категорий А или Б (для военнообязанных)."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117074689",
+    "salary": 50000.0,
+    "description": "Образование не ниже среднего, средне-специального."
+  },
+  {
+    "title": "Полицейский",
+    "url": "https://hh.ru/vacancy/117803487",
+    "salary": 100000.0,
+    "description": "Образование не ниже среднего Годные по состоянию здоровья. Начисление пенсии по достижению 50-летнего возраста или 20-летнего стажа работы..."
+  },
+  {
+    "title": "Стоматолог-хирург",
+    "url": "https://hh.ru/vacancy/117539524",
+    "salary": 300000.0,
+    "description": "Описание отсутствует"
+  },
+  {
+    "title": "Консультирующий стоматолог",
+    "url": "https://hh.ru/vacancy/117421790",
+    "salary": 225000.0,
+    "description": "высшее медицинское образование по специальности <highlighttext>Стоматология</highlighttext>; действующий сертификат по специальности \"<highlighttext>Стоматология</highlighttext> терапевтическая\" или \"<highlighttext>Стоматология</highlighttext> общей практики\". - опыт работы <highlighttext>стоматологом</highlighttext> от..."
+  },
+  {
+    "title": "Стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/117432483",
+    "salary": 250000.0,
+    "description": "Описание отсутствует"
+  },
+  {
+    "title": "Врач стоматолог хирург имплантолог",
+    "url": "https://hh.ru/vacancy/117788918",
+    "salary": 75000.0,
+    "description": "Наличие действующего сертификата. Опыт работы не менее 3х лет."
+  },
+  {
+    "title": "Врач-стоматолог хирург/имплантолог",
+    "url": "https://hh.ru/vacancy/117568890",
+    "salary": 425000.0,
+    "description": "Имеете клинический опыт работы не менее 3 лет после ординатуры. Все работы выполняете с увеличением. Имеете хороший опыт в тотальных..."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117834016",
+    "salary": 100000.0,
+    "description": "Опыт работы терапевтом-микроскопистом от 5 лет. Врача, работающего по современным протоколам. Специалиста, аккуратного, внимательного к деталям, ориентированного на качество. "
+  },
+  {
+    "title": "Врач стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/116816341",
+    "salary": 150000.0,
+    "description": "Наличие сертификата по специальности. - Развитые коммуникативные навыки и клиническое мышление. - Опыт работы от 5 лет (готовы рассмотреть талантливых специалистов с..."
+  },
+  {
+    "title": "Врач стоматолог-хирург (м.Таганская/ЗИЛ)",
+    "url": "https://hh.ru/vacancy/117717866",
+    "salary": 450000.0,
+    "description": "Обязательно высшее медицинское образование, специализация \"Хирургическая <highlighttext>стоматология</highlighttext>\". Навыки установки систем All-on-4, All-on-6 и одномоментной имплантации обязательны. "
+  },
+  {
+    "title": "Врач-стоматолог универсал",
+    "url": "https://hh.ru/vacancy/117588986",
+    "salary": 150000.0,
+    "description": "<highlighttext>Стоматолог</highlighttext> универсал с опытом работы. Требования: Честный, добросовестный ,чистоплотный. Выглядеть всегда опрятно . Уметь общаться с пациентами."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117434581",
+    "salary": 200000.0,
+    "description": "Высшее медицинское образование, действующие сертификаты или аккредитация. Наличие фотопротокола-обязательное условие рассмотрения Вашей кандидатуры!"
+  },
+  {
+    "title": "Врач-стоматолог ортопед",
+    "url": "https://hh.ru/vacancy/117603525",
+    "salary": 250000.0,
+    "description": "Опыт работы <highlighttext>стоматологом</highlighttext>-ортопедом не менее 6 лет (после окончания ординатуры). Сертификат об окончании ординатуры по ортопедической <highlighttext>стоматологии</highlighttext>. "
+  },
+  {
+    "title": "Стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/117585021",
+    "salary": 200000.0,
+    "description": "Описание отсутствует"
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117842608",
+    "salary": 300000.0,
+    "description": "Опыт работы на аналогичной должности не менее 5 лет. Опыт работы на микроскопе, фотопротокол, эндодонтия. Подготовка зубов, для дальнейшей работы..."
+  },
+  {
+    "title": "Врач-стоматолог первичной консультации",
+    "url": "https://hh.ru/vacancy/117698474",
+    "salary": 315000.0,
+    "description": "Законченная ординатура, действующий сертификат. Умение читать снимки. Опыт работы врачом первичного осмотра от 3-х лет в крупных клиниках. "
+  },
+  {
+    "title": "Врач-стоматолог гигиенист (в Митино)",
+    "url": "https://hh.ru/vacancy/117805133",
+    "salary": 155000.0,
+    "description": "Наличие действующего сертификата “Гигиенист стоматологический”. Обязательный опыт работы в частных клиниках от 1 года. Знания современных материалов и технологий, в..."
+  },
+  {
+    "title": "Врач стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/117151382",
+    "salary": 150000.0,
+    "description": "Междисциплинарное видение и мышление. Умение налаживать коммуникацию с пациентом. Профессионализм, целеустремленность, доброжелательность, честность, открытость. Наличие действующего сертификата по специальности \"<highlighttext>Стоматология</highlighttext>..."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/116020654",
+    "salary": 70000.0,
+    "description": "Высшее, специальность \"<highlighttext>Стоматология</highlighttext> терапевтическая\", обучение по программе интернатуры/ординатуры, стаж работы врачом-специалистом не менее 5 лет. Наличие Сертификата специалиста..."
+  },
+  {
+    "title": "Врач Стоматолог-хирург",
+    "url": "https://hh.ru/vacancy/117550952",
+    "salary": 0.0,
+    "description": "Высшее медицинское образование. Наличие действующего сертификата \"<highlighttext>Стоматология</highlighttext> хирургическая\". Опыт работы по специальности \"<highlighttext>Стоматология</highlighttext> хирургическая\" от 3 лет. Опыт работы с..."
+  },
+  {
+    "title": "Стоматолог-ортодонт",
+    "url": "https://hh.ru/vacancy/117603422",
+    "salary": 425000.0,
+    "description": "Знания, навыки и умение планировать ортодонтическое лечение в команде со смежными специалистами, ортопедом, хирургом-имплантологом, пародонтологом, терапевтом и детским <highlighttext>стоматологом</highlighttext>. - "
+  },
+  {
+    "title": "Врач стоматолог - ортопед",
+    "url": "https://hh.ru/vacancy/117501913",
+    "salary": 202500.0,
+    "description": "Опыт работы <highlighttext>стоматологом</highlighttext> не менее 3-х лет. Действующий сертификат по специальности \"<highlighttext>Стоматология</highlighttext> ортопедическая\" или \"<highlighttext>Стоматология</highlighttext> общей практики\". "
+  },
+  {
+    "title": "Ассистент врача-стоматолога",
+    "url": "https://hh.ru/vacancy/116321961",
+    "salary": 68250.0,
+    "description": "Образование - среднее специальное (сестринское дело). Коммуникабельность. Общительность. Уравновешенность. Умение действовать и принимать решения в нестандартных ситуациях. Стрессоустойчивость. Медицинская книжка. "
+  },
+  {
+    "title": "Стоматолог-хирург",
+    "url": "https://hh.ru/vacancy/117825992",
+    "salary": 0.0,
+    "description": "Высшее медицинское образование, наличие действующего сертификата по специальности \"Хирургия\". Опыт работы по специальности от 3-х лет. Умение применять современные..."
+  },
+  {
+    "title": "Врач стоматолог-хирург/ортопед(жилье)",
+    "url": "https://hh.ru/vacancy/117850605",
+    "salary": 200000.0,
+    "description": "Высшее образование по специальности «<highlighttext>стоматология</highlighttext>». Первичная специализация или ординатура по специальности «<highlighttext>стоматология</highlighttext> хирургическая» и «<highlighttext>стоматология</highlighttext> ортопедическая». Ожидаем работу в стабильном..."
+  },
+  {
+    "title": "Стоматолог имплантолог",
+    "url": "https://hh.ru/vacancy/117319015",
+    "salary": 40000.0,
+    "description": "Проводим собрания, тренинги и вебинары на развитие профессиональных, лидерских качеств. - Высшее медицинское образование. - Опыт работы от 5 лет. - "
+  },
+  {
+    "title": "Врач стоматолог хирург",
+    "url": "https://hh.ru/vacancy/117832714",
+    "salary": 170000.0,
+    "description": "Высшее образование, аккредитация по специальности <highlighttext>Стоматология</highlighttext> хирургическая. Стаж работы по специальности не менее 3 лет."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117845924",
+    "salary": 95000.0,
+    "description": "Высшее медицинское образование и наличие: диплом об окончании ВУЗа, удостоверение об окончании (интернатуры, ординатуры), первичная специализация, свидетельства и дипломы, сертификаты..."
+  },
+  {
+    "title": "Врач стоматолог",
+    "url": "https://hh.ru/vacancy/117791645",
+    "salary": 0.0,
+    "description": "Многопрофильный прием клинике по направлению <highlighttext>стоматолог</highlighttext> -хирург, <highlighttext>стоматолог</highlighttext>-имплантолог, <highlighttext>стоматолог</highlighttext>-ортопед, протезирование на имплантах, приветствуется опыт работы <highlighttext>стоматологом</highlighttext>-терапевтом, пародонтологом. "
+  },
+  {
+    "title": "Врач стоматолог детский/подростковый (СЗАО)",
+    "url": "https://hh.ru/vacancy/117695991",
+    "salary": 75000.0,
+    "description": "...по Детской <highlighttext>стоматологии</highlighttext>. Умение работать с микроскопом или в бинокулярах. Умение работать с детьми, имеющими негативный опыт посещения <highlighttext>стоматолога</highlighttext>. "
+  },
+  {
+    "title": "Стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/117539502",
+    "salary": 375000.0,
+    "description": "Умение составлять комплексные планы лечения на всех врачей. Умение выполнять ортопедические реабилитации любой сложности (на имплантатах и своих зубах). "
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117603544",
+    "salary": 75000.0,
+    "description": "Действующие сертификаты по терапевтической или общей <highlighttext>стоматологии</highlighttext>. Наличие дополнительных образовательных сертификатов по эндодонтии. Способность работать в команде и создавать поток..."
+  },
+  {
+    "title": "Стоматолог- универсал",
+    "url": "https://hh.ru/vacancy/116752898",
+    "salary": 225000.0,
+    "description": "Требования: Наличие действующего сертификата на работу."
+  },
+  {
+    "title": "Врач-стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/107869194",
+    "salary": 125000.0,
+    "description": "Опыт работы врачом-<highlighttext>стоматологом</highlighttext>-терапевтом от 5 лет. Опыт работы с микроскопом - обязателен!!! Навык работы со стоматологической оптикой!!!"
+  },
+  {
+    "title": "Врач стоматолог-ортопед",
+    "url": "https://hh.ru/vacancy/117388014",
+    "salary": 250000.0,
+    "description": "Передать свои знания. Быстрее адаптироваться, обучаем современным методам и поддерживаем в.  Знание современных техник съемного и несъемного протезирования, включая.  "
+  },
+  {
+    "title": "Врач стоматолог - гигиенист",
+    "url": "https://hh.ru/vacancy/116844724",
+    "salary": 0.0,
+    "description": "Высшее медицинское образование, ординатура по специальности. Наличие действующего сертификата «терапия». Опыт работы по специальности от 2-х лет."
+  },
+  {
+    "title": "Врач-стоматолог-хирург (НЕ СОВМЕСТИТЕЛЬСТВО)",
+    "url": "https://hh.ru/vacancy/117773702",
+    "salary": 0.0,
+    "description": "Высшее профессиональное образование по специальности \"<highlighttext>Стоматология</highlighttext>\". Интернатура и (или) ординатура по специальности \"<highlighttext>Стоматология</highlighttext> хирургическая\". Действующий сертификат по специализации \"<highlighttext>Стоматология</highlighttext> хирургичекая\"."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117805544",
+    "salary": 0.0,
+    "description": "Описание отсутствует"
+  },
+  {
+    "title": "Врач-стоматолог универсал",
+    "url": "https://hh.ru/vacancy/117789467",
+    "salary": 175000.0,
+    "description": "Стаж от 5 лет . коммуникабельность,исполнительность. Наличие диплома о высшем образовании."
+  },
+  {
+    "title": "Стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117509608",
+    "salary": 100000.0,
+    "description": "Высшее образование, свидетельство об окончании интернатуры и ординатуры, сертификат по специальности «<highlighttext>Стоматология</highlighttext> терапевтическая». Высокая мотивация к работе. Умение грамотно обосновать..."
+  },
+  {
+    "title": "Стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117527907",
+    "salary": 75000.0,
+    "description": "Сертификат по \"<highlighttext>Стоматологии</highlighttext> терапевтической\" или \"<highlighttext>Стоматологии</highlighttext> общей практики\". Опыт работы в частных клиниках. ОБЯЗАТЕЛЬНЫЕ рабочие дни на рабочей неделе и..."
+  },
+  {
+    "title": "Ассистент стоматолога",
+    "url": "https://hh.ru/vacancy/117855693",
+    "salary": 143000.0,
+    "description": "Только среднее специальное образование. Обязательно действующий сертификат сестринское дело. Основное место работы, без совмещения. Опыт работы ассистентом с ортопедом и..."
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117346597",
+    "salary": 275000.0,
+    "description": "Специалиста с опытом работы от 3 лет. Человека, готового к комплексному командному подходу в лечении пациентов. Врача, готового развиваться и..."
+  },
+  {
+    "title": "Стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117776012",
+    "salary": 0.0,
+    "description": "Наличие диплома об окончании ВУЗа, действующих сертификатов,оформленного портфолио. Опыт работы от 2х лет. Пунктуальность. Ответственность."
+  },
+  {
+    "title": "Врач стоматолог-терапевт (м. Окская)",
+    "url": "https://hh.ru/vacancy/116760170",
+    "salary": 75000.0,
+    "description": "Наличие действующего сертификата по специальности \"<highlighttext>Стоматология</highlighttext> терапевтическая\" или \"<highlighttext>Стоматология</highlighttext> общей практики\". Приветствуются регулярные курсы повышения квалификации и посещение обучающих мероприятий. "
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117800731",
+    "salary": 75000.0,
+    "description": "Коммуникабельность,ответственность,доброжелательность.Стремление и желание к профессиональному росту и освоению новых знаний и технологий! Знание современных методов лечения. "
+  },
+  {
+    "title": "Врач стоматолог",
+    "url": "https://hh.ru/vacancy/117502660",
+    "salary": 200000.0,
+    "description": "Аккуратность. Пунктуальность. Умение работать с программами."
+  },
+  {
+    "title": "Врач стоматолог-хирург",
+    "url": "https://hh.ru/vacancy/117208366",
+    "salary": 175000.0,
+    "description": "Наличие сертификата врача-<highlighttext>стоматолога</highlighttext>. Стаж работы строго от 5 лет."
+  },
+  {
+    "title": "Стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117678102",
+    "salary": 210000.0,
+    "description": "Высокая мотивация к работе. Умение убеждать и мотивировать пациентов. Знание современных стоматологических материалов ,различных методик эффективного лечения стоматологических заболеваний. "
+  },
+  {
+    "title": "Стоматолог-терапевт/эндодонтист",
+    "url": "https://hh.ru/vacancy/117854431",
+    "salary": 100000.0,
+    "description": "Высшее медицинское образование, действующий сертификат. Работа в команде со смежными специалистами. Опыт работы не менее 3 лет в частных клиниках. "
+  },
+  {
+    "title": "Врач стоматолог-терапевт",
+    "url": "https://hh.ru/vacancy/117785441",
+    "salary": 50000.0,
+    "description": "Опыт работы от 3-х лет. Высшее медицинское образование (врач-<highlighttext>стоматолог</highlighttext> терапевт). Действующий сертификат по специальности. Наличие медицинской книжки."
+  },
+  {
+    "title": "Стоматолог-терапевт (Дивеево)",
+    "url": "https://hh.ru/vacancy/117603567",
+    "salary": 80000.0,
+    "description": "Наши преимущества: Образование: высшее профильное образование по специальности \"<highlighttext>Стоматология</highlighttext> общей практики\", <highlighttext>Стоматология</highlighttext> терапевтическая\" (действующий сертификат или аккредитация). Рассмотрим кандидатов без..."
+  }
+]

@@ -1,4 +1,4 @@
-from utils.user_interaction import main_menu
+from src.user_interaction import main_menu
 from api.hh_api import HeadHunterAPI
 
 

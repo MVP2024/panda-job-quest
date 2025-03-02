@@ -1,4 +1,5 @@
 import json
+import os
 from typing import List, Dict, Any, Optional
 from .abstract_storage import AbstractStorage
 
@@ -8,13 +9,18 @@ class JSONStorage(AbstractStorage):
     Класс для работы с JSON-хранилищем вакансий
     """
 
-    def __init__(self, filename: str = 'vacancies.json'):
+    def __init__(self, filename: str = None):
         """
-        Инициализация JSON-хранилища
+        Инициализация JSON-хранилища с автоматическим созданием директории.
+        """
+        if filename is None:
+            # Создаем абсолютный путь к файлу в директории data корня проекта
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            filename = os.path.join(base_dir, 'data', 'vacancies.json')
 
-        :param filename: Имя файла для хранения
-        """
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
         self._filename = filename
+
 
     def add_vacancy(self, vacancy: Any) -> None:
         """
