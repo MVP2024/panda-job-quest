@@ -39,4 +39,3 @@ poetry run python src/main.py
 - Requests
 - HeadHunter API
 - JSON Storage
-

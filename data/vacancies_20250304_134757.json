@@ -1,0 +1,302 @@
+[
+  {
+    "title": "Junior Python-разработчик",
+    "url": "https://hh.ru/vacancy/117913081",
+    "salary": 35000.0,
+    "description": "Уверенное владение Python 3. Опыт работы с веб-фреймворками: знание Django/Flask, FastAPI. Опыт работы с базами данных."
+  },
+  {
+    "title": "Python разработчик (junior+/middle)",
+    "url": "https://hh.ru/vacancy/117942969",
+    "salary": 0.0,
+    "description": "Опыт коммерческой разработки от 2 лет. Опыт работы с Python3 (asyncio), SQL, PostgreSQL, FastAPI, Redis, RabbitMQ. Разрабатывал(а) распределённые..."
+  },
+  {
+    "title": "Middle Python-разработчик",
+    "url": "https://hh.ru/vacancy/117926121",
+    "salary": 200000.0,
+    "description": "Опыт коммерческой разработки на Python от 2 лет. Понимание работы с асинхронностью, очередьми сообщений, FastAPI, SQLAlchemy (без ORM) и SQL."
+  },
+  {
+    "title": "Python-разработчик (Junior/Middle)",
+    "url": "https://hh.ru/vacancy/117236141",
+    "salary": 2300.0,
+    "description": "Использует LLM и RAG. 1+ год опыта в Python. Увлечение передовыми технологиями, опыт применения GPT для анализа данных с..."
+  },
+  {
+    "title": "Python разработчик (Junior+), CV и ML",
+    "url": "https://hh.ru/vacancy/117876738",
+    "salary": 0.0,
+    "description": "Опыт в Computer Vision от 1,5 лет. Промышленный опыт разработки и внедрения решений машинного обучения. Уверенное владение Python, PyTorch..."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/117381250",
+    "salary": 285000.0,
+    "description": "Есть опыт работы с Python 3.8, asyncio (async/await), веб-фреймоворками (aiohttp/fastAPI/flask/Django), ORM (peewee, SQLAlchemy, Django..."
+  },
+  {
+    "title": "Backend разработчик (Python FastAPI)",
+    "url": "https://hh.ru/vacancy/117351302",
+    "salary": 0.0,
+    "description": "Знания и опыт в профильных технологиях: Python, FastAPI, SQLalchemy, Pytest. Kafka (теоретические знания о технологии). Готовность ездить в офис."
+  },
+  {
+    "title": "Middle Python разработчик",
+    "url": "https://hh.ru/vacancy/117923216",
+    "salary": 0.0,
+    "description": "Опыт коммерческой разработки на Python более 3 лет. Опыт разработки с применением FastAPI, knative, pydantic, sqlalchemy, redis, postgres, docker, pytest..."
+  },
+  {
+    "title": "Python-разработчик (парсинг)",
+    "url": "https://hh.ru/vacancy/117945230",
+    "salary": 110000.0,
+    "description": "Уверенное понимание работы с Git. Опыт многопоточного и асинхронного программирования. Опыт работы PostgreSQL. Понимание принципов SOLID. Опыт написания Unit-тестов..."
+  },
+  {
+    "title": "Python разработчик AI сервисы",
+    "url": "https://hh.ru/vacancy/117579859",
+    "salary": 115000.0,
+    "description": "Опыт работы с Python и фреймворками для работы с AI (например, LangChain, FastAPI, Transformers, Pydantic AI и тд)."
+  },
+  {
+    "title": "Python Developer",
+    "url": "https://hh.ru/vacancy/117486834",
+    "salary": 0.0,
+    "description": "Опыт работы с брокерами сообщений RabbitMq. Опыт настройки деплоя на базе Kubernetes."
+  },
+  {
+    "title": "Python Developer | Middle+",
+    "url": "https://hh.ru/vacancy/117775923",
+    "salary": 0.0,
+    "description": "Серьезный опыт парсинга данных для коммерческой разработки. Очень важен опыт в обходе защитных механизмов: капчи, блокировки по IP и т..."
+  },
+  {
+    "title": "ML инженер / Python-разработчик / ML Engineer / Python Developer",
+    "url": "https://hh.ru/vacancy/117089117",
+    "salary": 0.0,
+    "description": "Опыт работы с LLM и понимание их механизмов (GPT-4, Claude, Gemini, Mistral). Глубокие знания NLP и трансформерных моделей (семантика..."
+  },
+  {
+    "title": "Python-разработчик (e-com, маркетплейсы, парсинг данных)",
+    "url": "https://hh.ru/vacancy/117794696",
+    "salary": 0.0,
+    "description": "Имеете релевантный задачам опыт работы. Владеете соответствующим технологическим стэком - Python, Selenium, Node.js, PHP. Умеете самостоятельно организовывать свой рабочий процесс в..."
+  },
+  {
+    "title": "Data Engineer / Python Developer (аналитика, API, ClickHouse, ML)",
+    "url": "https://hh.ru/vacancy/116878145",
+    "salary": 140000.0,
+    "description": "Языки программирования: Python (асинхронное программирование, FastAPI, asyncio, aiohttp). Работа с данными: Pandas, NumPy, Gspread (автоматизация работы с Google Таблицами)."
+  },
+  {
+    "title": "Middle Python Developer",
+    "url": "https://hh.ru/vacancy/117911133",
+    "salary": 0.0,
+    "description": "Опыт разработки веб сервисов с использованием Django rest framework. Отличное понимание асинхронности, её видов и их реализаций в языке python."
+  },
+  {
+    "title": "Python-разработчик (Middle)",
+    "url": "https://hh.ru/vacancy/117944657",
+    "salary": 0.0,
+    "description": "Опыт работы Разработчиком Backend Python от 3-х лет. Опыт коммерческой разработки на Django или Flask. Опыт работы с реляционными..."
+  },
+  {
+    "title": "Middle Python Developer",
+    "url": "https://hh.ru/vacancy/117783391",
+    "salary": 0.0,
+    "description": "Уверенные знания Python и экосистемы. Библиотеки: aiogram, aiohttp, FastAPI. БД: redis, PostgreSQL, Clickhouse. Брокеры сообщений: kafka, nats. CI\\CD: Gitlab."
+  },
+  {
+    "title": "Python-разработчик (техническая поддержка пользователей)",
+    "url": "https://hh.ru/vacancy/117896964",
+    "salary": 150000.0,
+    "description": "Знание Python. Умение формализовать запросы пользователей. Опыт работы с системами HelpDesk и в составлении. Пользовательских инструкций. Опыт администрирования Linuх и..."
+  },
+  {
+    "title": "Python разработчик (Threat Intelligence)",
+    "url": "https://hh.ru/vacancy/117802620",
+    "salary": 0.0,
+    "description": "Отлично знаешь Python и имеешь хороший опыт разработки на нем. Понимаешь принципы автоматизации задач и анализа данных. У тебя есть..."
+  },
+  {
+    "title": "Python разработчик (офис)",
+    "url": "https://hh.ru/vacancy/117441523",
+    "salary": 85000.0,
+    "description": "Языки программирования: Python 3.9+, JS, SQL. Flask, SQLAlchemy, Bootstrap, JQuery. Платформа: Linux, Docker, PostgreSQL. Нужен “свежий” опыт разработки..."
+  },
+  {
+    "title": "Python разработчик (удаленно)",
+    "url": "https://hh.ru/vacancy/117015641",
+    "salary": 0.0,
+    "description": "Готовность вникать во все этапы разработки ПО. Эффективно использовать имеющийся опыт и знания: способность самостоятельно находить решения нетривиальных задач."
+  },
+  {
+    "title": "Middle Python-разработчик в команду прочих проектов",
+    "url": "https://hh.ru/vacancy/117891432",
+    "salary": 0.0,
+    "description": "Отличное знание Python 3.6+. Знание Linux на уровне продвинутого пользователя, bash, makefile. Опыт работы с Docker, Kubernetes, Helm..."
+  },
+  {
+    "title": "Python разработчик (senior)",
+    "url": "https://hh.ru/vacancy/117552050",
+    "salary": 0.0,
+    "description": "Отличное знание Python, Django. - Опыт коммерческой разработки на Python от 7 лет. - Знание SQL, опыт оптимизации SQL-запросов. -"
+  },
+  {
+    "title": "Разработчик-Python (ML/Data Engineer/AI)",
+    "url": "https://hh.ru/vacancy/117261425",
+    "salary": 0.0,
+    "description": "Опыт работы с Python и основными библиотеками для обработки данных, такими как Pandas и NumPy. Опыт работы с LLM, запуск..."
+  },
+  {
+    "title": "Python разработчик",
+    "url": "https://hh.ru/vacancy/117683846",
+    "salary": 115000.0,
+    "description": "1) 1.5+ год опыта работы в качестве бэкенд-разработчика (Python). 2) Опыт в разработке чат-ботов на aiogram..."
+  },
+  {
+    "title": "Python-разработчик (техническая поддержка пользователей)",
+    "url": "https://hh.ru/vacancy/109177564",
+    "salary": 150000.0,
+    "description": "Знание Python. Умение формализовать запросы пользователей. Опыт работы с системами HelpDesk и в составлении. Пользовательских инструкций. Опыт администрирования Linuх и..."
+  },
+  {
+    "title": "Middle Python backend developer (FastAPI)",
+    "url": "https://hh.ru/vacancy/117565527",
+    "salary": 0.0,
+    "description": "Необходимые навыки: Уверенно владеть Python 3, понимать отличия от Python 2. Иметь опыт работы с FastAPI от 2 лет (с..."
+  },
+  {
+    "title": "Старший Python разработчик",
+    "url": "https://hh.ru/vacancy/117467503",
+    "salary": 200000.0,
+    "description": "Уверенное владение Python (версии 3+) от 4 лет опыта. Отличное знание библиотек requsts, scapy. Опыт работы с веб-фреймворками..."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/115144903",
+    "salary": 85000.0,
+    "description": "Опыт разработки ПО на Python 3 от 3-х лет. Глубокое понимание принципов работы реляционных баз данных – PostgreSQL и ClickHouse."
+  },
+  {
+    "title": "Python-разработчик (ML cервисы)",
+    "url": "https://hh.ru/vacancy/117903477",
+    "salary": 0.0,
+    "description": "Знание основ ООП, паттернов проектирования, опыт разработки приложений с многопоточностью. Опыт разработки с использованием базовых библиотек для работы с данными..."
+  },
+  {
+    "title": "Python разработчик (команда SberWorks)",
+    "url": "https://hh.ru/vacancy/117892171",
+    "salary": 0.0,
+    "description": "Высшее техническое/математическое образование. Опыт разработки backend (Python) приложений от 2-х лет. Опыт разработки интеграционных решений на основе REST..."
+  },
+  {
+    "title": "Python-разработчик для создания API фильтров для обработки фото",
+    "url": "https://hh.ru/vacancy/117509656",
+    "salary": 0.0,
+    "description": "Уверенное знание Python. Опыт работы с библиотеками для обработки изображений (например, OpenCV, PIL, NumPy). Понимание работы с AI-моделями и..."
+  },
+  {
+    "title": "Middle backend-разработчик Python",
+    "url": "https://hh.ru/vacancy/117345451",
+    "salary": 0.0,
+    "description": "Опыт коммерческой разработки на Python от 3 лет. Опыт разработки backend web-приложений, в том числе с испВозможна удаленная работа..."
+  },
+  {
+    "title": "Python Developer (Middle)",
+    "url": "https://hh.ru/vacancy/117415309",
+    "salary": 0.0,
+    "description": "Опыт работы от 2х лет, наличие реализованных проектов. Опыт работы на Python. Фреймворки Flask, Fastapi, React.js. БД - PostgreSQL. AirFlow."
+  },
+  {
+    "title": "Python developer/ML и партнер",
+    "url": "https://hh.ru/vacancy/117342301",
+    "salary": 275000.0,
+    "description": "Опыт работы в стартапах или небольших компаниях. Опыт работы в команде. Опыт работы в больших компаниях. Опыт успехов/провалов в..."
+  },
+  {
+    "title": "Middle Python Developer",
+    "url": "https://hh.ru/vacancy/117945006",
+    "salary": 225000.0,
+    "description": "Опыт коммерческой разработки от 1 года. Умение работать с системой контроля версий Git. Хорошее владение Python, умение писать чистый читаемый..."
+  },
+  {
+    "title": "Разработчик Python в МСК",
+    "url": "https://hh.ru/vacancy/117890973",
+    "salary": 0.0,
+    "description": "Отличное знание Python 3.6+. Знание Linux на уровне продвинутого пользователя, bash. Знание MongoDB, SQL, PostgreSQL. Опыт работы с..."
+  },
+  {
+    "title": "Python Developer (Malaga)",
+    "url": "https://hh.ru/vacancy/117931784",
+    "salary": 0.0,
+    "description": "Навыки: Опыт разработки на Python не менее 5-ти лет. Опыт работы с Django и понимание его внутренностей, Pydantic."
+  },
+  {
+    "title": "Python разработчик (senior)",
+    "url": "https://hh.ru/vacancy/117327511",
+    "salary": 250000.0,
+    "description": "Отличные знания Python, PostgreSQL и React."
+  },
+  {
+    "title": "Backend Engineer (Python) в Apartments",
+    "url": "https://hh.ru/vacancy/116504273",
+    "salary": 0.0,
+    "description": "Опыт работы с Python и Django не менее 3‑х лет. Отличное владение системами контроля версий, такими как Git."
+  },
+  {
+    "title": "Ведущий Python разработчик",
+    "url": "https://hh.ru/vacancy/117570165",
+    "salary": 0.0,
+    "description": "Более 3-х лет опыта в разработке на Python. Уверенные знания и опыт работы с фреймворками: Django и Pydantic, следование..."
+  },
+  {
+    "title": "Middle Python-разработчик",
+    "url": "https://hh.ru/vacancy/117637553",
+    "salary": 0.0,
+    "description": "Опыт коммерческой разработки на Python. Навыки опытного пользователя Linux. Опыт работы с SQL и NoSQL СУБД. Навыки работы с системой..."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/117627733",
+    "salary": 225000.0,
+    "description": "Больше 4 лет писали код на Python. Уверенно владеете Python 3, имеете навыки работы с асинхронным программированием, различными библиотеками и..."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/116459956",
+    "salary": 0.0,
+    "description": "Опыт в реализации web приложений. Умение писать Unit тесты. Глубокое понимание принципов синхронных, асинхронных, параллельных запросов. Понимание работы garbage collector..."
+  },
+  {
+    "title": "Старший Python-разработчик в группу разработки проектов",
+    "url": "https://hh.ru/vacancy/117890914",
+    "salary": 0.0,
+    "description": "Отличное знание Python 3.6+. Знание Linux на уровне продвинутого пользователя, bash, makefile. Опыт работы с Docker, Kubernetes, Helm."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/107196286",
+    "salary": 140000.0,
+    "description": "Знание Python 3.8+, asyncio (async/await). Опыт работы с SQL (Oracle/PostgreSQL), ORM (SQLAlchemy). Знание Git."
+  },
+  {
+    "title": "SQL- разработчик",
+    "url": "https://hh.ru/vacancy/117913291",
+    "salary": 60000.0,
+    "description": "Опыт работы в роли Python Developer от 4-х лет. Опыт работы с Docker, GitLab CI, OpenShift либо Kubernetes, nginx."
+  },
+  {
+    "title": "Python-разработчик",
+    "url": "https://hh.ru/vacancy/117112666",
+    "salary": 0.0,
+    "description": "Опыт программирования на Python от 3 лет. Глубокие знания основ Computer Science: алгоритмы, структуры данных, операционные системы, сети."
+  },
+  {
+    "title": "Backend-разработчик (Python) с опытом во Frontend (React)",
+    "url": "https://hh.ru/vacancy/117342329",
+    "salary": 325000.0,
+    "description": "Опыт Backend-разработки на Python от 2 лет. Глубокие знания фреймворка Django. Опыт Frontend-разработки на React.js (уровень взаимодействия с..."
+  }
+]
