@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Union
 
 @dataclass
 class Vacancy:
@@ -10,7 +10,7 @@ class Vacancy:
 
     title: str = field(default='')
     url: str = field(default='')
-    salary: Optional[Dict[str, Any]] = field(default_factory=dict)
+    salary: Union[Dict[str, Any], float, None] = field(default_factory=dict)
     description: str = field(default="Описание отсутствует")
 
     def __post_init__(self):
@@ -23,9 +23,12 @@ class Vacancy:
             salary_from = self.salary.get('from', 0) or 0
             salary_to = self.salary.get('to', 0) or 0
             self._salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
+        elif self.salary is None:
+            # Если зарплата None
+            self._salary = 0.0
         else:
             # Если зарплата передана напрямую
-            self._salary = self.salary if self.salary is not None else 0.0
+            self._salary = float(self.salary)
 
         self._description = self.description or 'Описание отсутствует'
         self._validate_data()
@@ -98,7 +101,7 @@ class Vacancy:
         return self._salary
 
     @salary.setter
-    def salary(self, value: Optional[Dict[str, Any]]) -> None:
+    def salary(self, value: Union[Dict[str, Any], float, None]) -> None:
         """
         Setter для свойства salary с валидацией
 
@@ -109,9 +112,12 @@ class Vacancy:
             salary_from = value.get('from', 0) or 0
             salary_to = value.get('to', 0) or 0
             self._salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
+        elif value is None:
+            # Если зарплата None
+            self._salary = 0.0
         else:
             # Если зарплата передана напрямую
-            self._salary = value if value is not None else 0.0
+            self._salary = float(value)
 
     @property
     def description(self) -> str:
