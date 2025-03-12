@@ -67,3 +67,56 @@ def test_vacancy_init_description_default():
         description=''
     )
     assert vacancy.description == 'Описание отсутствует'
+
+
+@pytest.mark.parametrize("invalid_title", ['', None])
+def test_vacancy_invalid_title(base_vacancy_data, invalid_title):
+    """Тест на невалидное название вакансии"""
+    base_vacancy_data['title'] = invalid_title
+    with pytest.raises(ValueError, match="Название вакансии не может быть пустым"):
+        Vacancy(**base_vacancy_data)
+
+
+@pytest.mark.parametrize("invalid_url", ['', None])
+def test_vacancy_invalid_url(base_vacancy_data, invalid_url):
+    """Тест на невалидный URL"""
+    base_vacancy_data['url'] = invalid_url
+    with pytest.raises(ValueError, match="URL вакансии не может быть пустым"):
+        Vacancy(**base_vacancy_data)
+
+
+@pytest.mark.parametrize("salary_input, expected", [
+    (None, 0.0),
+    (50000, 50000.0),
+    ({'from': 50000, 'to': 100000}, 75000.0)
+])
+def test_vacancy_salary_handling(base_vacancy_data, salary_input, expected):
+    """Тест обработки различных вариантов зарплаты"""
+    base_vacancy_data['salary'] = salary_input
+    vacancy = Vacancy(**base_vacancy_data)
+    assert vacancy.salary == expected
+
+
+def test_vacancy_description_default(base_vacancy_data):
+    """Тест установки описания по умолчанию"""
+    base_vacancy_data['description'] = ''
+    vacancy = Vacancy(**base_vacancy_data)
+    assert vacancy.description == 'Описание отсутствует'
+
+
+def test_vacancy_to_dict(vacancy_with_full_data):
+    """Тест преобразования вакансии в словарь"""
+    vacancy_dict = vacancy_with_full_data.to_dict()
+    assert isinstance(vacancy_dict, dict)
+    assert all(key in vacancy_dict for key in ['title', 'url', 'salary', 'description'])
+
+
+def test_vacancy_comparison(base_vacancy_data):
+    """Тест сравнения вакансий по зарплате"""
+    base_vacancy_data['salary'] = 50000
+    vacancy1 = Vacancy(**base_vacancy_data)
+
+    base_vacancy_data['salary'] = 60000
+    vacancy2 = Vacancy(**base_vacancy_data)
+
+    assert vacancy1 < vacancy2

@@ -3,6 +3,9 @@ from typing import Any, Optional, Dict, List
 from storage.abstract_storage import AbstractStorage
 from unittest.mock import Mock
 
+from tests.conftest import ConcreteStorage
+
+
 def test_abstract_class_cannot_be_instantiated():
     """Проверка невозможности создания экземпляра абстрактного класса"""
     with pytest.raises(TypeError):
@@ -39,6 +42,7 @@ def test_method_signatures():
             if not criteria:
                 raise ValueError("Criteria cannot be empty")
 
+
     # Проверка создания конкретного класса
     storage = ConcreteStorage()
     assert isinstance(storage, AbstractStorage)
@@ -53,3 +57,27 @@ def test_method_signatures():
     with pytest.raises(ValueError):
 
         storage.delete_vacancy({})
+
+
+def test_concrete_storage_methods():
+    """Тест методов ConcreteStorage"""
+    storage = ConcreteStorage()
+
+    # Тест add_vacancy
+    vacancy = {'name': 'Test Vacancy'}
+    storage.add_vacancy(vacancy)
+    assert len(storage.vacancies) == 1
+    assert storage.vacancies[0] == vacancy
+
+    # Тест get_vacancies
+    result = storage.get_vacancies()
+    assert len(result) == 1
+
+    # Тест delete_vacancy (просто вызов, чтобы покрыть строку)
+    storage.delete_vacancy({'name': 'Test Vacancy'})
+
+def test_storage_fixture(storage):
+    """Проверка фикстуры storage"""
+    assert isinstance(storage, ConcreteStorage)
+    assert hasattr(storage, 'vacancies')
+    assert len(storage.vacancies) == 0
