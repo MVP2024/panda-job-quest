@@ -52,3 +52,54 @@ def test_get_vacancies_method_signature():
     assert 'search_query' in sig.parameters, "Должен быть параметр search_query"
     assert 'per_page' in sig.parameters, "Должен быть параметр per_page"
     assert sig.parameters['per_page'].default == 50, "Значение per_page по умолчанию должно быть 50"
+
+
+@patch('requests.get')
+def test_get_vacancies_params(mock_get):
+    """Проверка корректности параметров запроса"""
+    mock_response = mock_get.return_value
+    mock_response.status_code = 200
+    mock_response.json.return_value = {'items': []}
+
+    hh_api = HeadHunterAPI()
+    hh_api.get_vacancies('python', per_page=10)
+
+    # Проверяем, что requests.get был вызван с правильными параметрами
+    assert mock_get.call_count == 2
+
+    first_call = mock_get.call_args_list[0]
+    assert first_call[0][0] == 'https://api.hh.ru/vacancies'
+    assert first_call[1]['params'] == {'text': 'python', 'per_page': 10}
+
+    second_call = mock_get.call_args_list[1]
+    assert second_call[0][0] == 'https://hh.ru/search/vacancy'
+    assert second_call[1]['params'] == {'text': 'python', 'per_page': 10}
+
+@patch('requests.get')
+def test_get_vacancies_empty_result(mock_get):
+    """Тест обработки пустого результата"""
+    mock_response = mock_get.return_value
+    mock_response.status_code = 200
+    mock_response.json.return_value = {'items': []}
+
+    hh_api = HeadHunterAPI()
+    vacancies = hh_api.get_vacancies('nonexistent')
+
+    assert vacancies == [], "При пустом результате должен возвращаться пустой список"
+
+
+@patch('requests.get')
+def test_get_vacancies_headers(mock_get):
+    """Проверка корректности заголовков"""
+    mock_response = mock_get.return_value
+    mock_response.status_code = 200
+    mock_response.json.return_value = {'items': []}
+
+    hh_api = HeadHunterAPI()
+    hh_api.get_vacancies('python')
+
+    # Проверяем наличие обязательных заголовков
+    call_headers = mock_get.call_args[1]['headers']
+    assert 'User-Agent' in call_headers
+    assert 'Accept' in call_headers
+    assert call_headers['Accept'] == 'application/json'
