@@ -1,36 +1,32 @@
-from dataclasses import dataclass, field
 from typing import Optional, Dict, Any, Union
 
-@dataclass
 class Vacancy:
     """
-    Класс для представления вакансии с использованием __slots__
+    Класс для представления вакансии
     """
     __slots__ = ['_title', '_url', '_salary', '_description']
 
-    title: str = field(default='')
-    url: str = field(default='')
-    salary: Union[Dict[str, Any], float, None] = field(default_factory=dict)
-    description: str = field(default="Описание отсутствует")
-
-    def __post_init__(self):
+    def __init__(self, title: str, url: str, salary: Union[Dict[str, Any], float, None] = None,
+                 description: str = "Описание отсутствует"):
         """
-        Метод, вызываемый после инициализации dataclass
-        """
-        # Обработка зарплаты
-        if isinstance(self.salary, dict):
-            # Если зарплата из API HH
-            salary_from = self.salary.get('from', 0) or 0
-            salary_to = self.salary.get('to', 0) or 0
-            self._salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
-        elif self.salary is None:
-            # Если зарплата None
-            self._salary = 0.0
-        else:
-            # Если зарплата передана напрямую
-            self._salary = float(self.salary)
+        Инициализация вакансии с валидацией и обработкой данных
 
-        self._description = self.description or 'Описание отсутствует'
+        :param title: Название вакансии (обязательно)
+        :param url: URL вакансии (обязательно)
+        :param salary: Зарплата (опционально)
+        :param description: Описание вакансии (опционально)
+        """
+        self._title = ''
+        self._url = ''
+        self._salary = 0.0
+        self._description = ''
+
+        # Используем setter-методы для установки значений
+        self.title = title
+        self.url = url
+        self.description = description
+        self.salary = salary
+
         self._validate_data()
 
     def to_dict(self) -> Dict[str, Any]:

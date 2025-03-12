@@ -1,6 +1,5 @@
 import os
 import json
-import re
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from .abstract_storage import AbstractStorage
@@ -65,7 +64,8 @@ class JSONStorage(AbstractStorage):
         vacancies = [v for v in vacancies if not self._match_criteria(v, criteria)]
         self._save_vacancies(vacancies)
 
-    def get_vacancies_by_salary_range(self, min_salary: float = 0, max_salary: float = float('inf')) -> List[Dict[str, Any]]:
+    def get_vacancies_by_salary_range(self, min_salary: float = 0, max_salary: float = float('inf')) -> List[
+        Dict[str, Any]]:
         """
         Получение вакансий в определенном диапазоне зарплат
 
@@ -76,8 +76,28 @@ class JSONStorage(AbstractStorage):
         vacancies = self._load_vacancies()
         return [
             vacancy for vacancy in vacancies
-            if min_salary <= vacancy.get('salary', 0) <= max_salary
+            if self._is_salary_in_range(vacancy.get('salary', {}), min_salary, max_salary)
         ]
+
+    @staticmethod
+    def _is_salary_in_range(salary: Dict[str, Any], min_salary: float, max_salary: float) -> bool:
+        """
+        Проверка попадания зарплаты в диапазон
+
+        :param salary: Словарь зарплаты
+        :param min_salary: Минимальная зарплата
+        :param max_salary: Максимальная зарплата
+        :return: находится ли зарплата в диапазоне
+        """
+        if not salary:
+            return False
+
+        # Проверяем диапазон 'from' и 'to'
+        salary_from = salary.get('from', 0)
+        salary_to = salary.get('to', float('inf'))
+
+        return (min_salary <= salary_from or min_salary <= salary_to) and \
+            (salary_from <= max_salary or salary_to <= max_salary)
 
     def get_vacancies_by_profession(self, profession: str) -> List[Dict[str, Any]]:
         """
@@ -112,7 +132,8 @@ class JSONStorage(AbstractStorage):
         with open(self._filename, 'w', encoding='utf-8') as f:
             json.dump(vacancies, f, ensure_ascii=False, indent=2)
 
-    def _match_criteria(self, vacancy: Dict[str, Any], criteria: Dict[str, Any]) -> bool:
+    @staticmethod
+    def _match_criteria(vacancy: Dict[str, Any], criteria: Dict[str, Any]) -> bool:
         """
         Проверка соответствия вакансии заданным критериям
 
@@ -125,7 +146,8 @@ class JSONStorage(AbstractStorage):
             for key, value in criteria.items()
         )
 
-    def _remove_html_tags(self, text: str) -> str:
+    @staticmethod
+    def _remove_html_tags(text: str) -> str:
         """
         Удаление HTML-тегов из текста с декодированием специальных символов
 
