@@ -7,12 +7,15 @@ readme = "README.md"
 license = "MIT"
 packages = [
     { include = "api" },
+    { include = "models" },
+    { include = "storage" },
     { include = "tests" }
 ]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = "^2.32.3"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest-cov = "^4.1.0"
@@ -62,15 +65,15 @@ warn_unused_ignores = true
 show_error_codes = true
 strict_optional = true
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-python_functions = ["test_*"]
-addopts = "-v --cov=api --cov-report=term-missing"
-
 [tool.coverage.run]
-source = ["api"]
+source = ["api", "models", "storage", "parsers"]
 omit = [
     "tests/*",
     "*/__init__.py"
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --cov=. --cov-report=term-missing"
