@@ -1,5 +1,10 @@
-import pytest
+from api.hh_api import HeadHunterAPI
+from models.vacancy import Vacancy
 from storage.abstract_storage import AbstractStorage
+import os
+import pytest
+from unittest.mock import Mock, patch
+from storage.json_storage import JSONStorage
 
 
 # фикстуры для class AbstractStorage(ABC)
@@ -43,17 +48,10 @@ def storage():
 
 
 # фикстуры для json_storage
-import os
-import pytest
-from unittest.mock import Mock, patch
-from storage.json_storage import JSONStorage
-
-
 @pytest.fixture
-def temp_json_file():
-    """Создание временного JSON файла"""
-    return os.path.join(os.path.dirname(__file__), 'test_vacancies.json')
-
+def temp_json_file(tmpdir):
+    """Создание временного JSON файла с использованием tmpdir"""
+    return str(tmpdir.join('test_vacancies.json'))
 
 @pytest.fixture
 def json_storage(temp_json_file):
@@ -63,18 +61,15 @@ def json_storage(temp_json_file):
 
 @pytest.fixture
 def sample_vacancy():
-    """Фикстура с примером вакансии"""
-
-    class MockVacancy:
-        def to_dict(self):
-            return {
-                'id': 1,
-                'name': 'Python Developer',
-                'description': '<p>Test description</p>',
-                'salary': {'from': 100000, 'to': 150000}
-            }
-
-    return MockVacancy()
+    """Фикстура с примером вакансии с использованием unittest.mock"""
+    mock_vacancy = Mock()
+    mock_vacancy.to_dict.return_value = {
+        'id': 1,
+        'name': 'Python Developer',
+        'description': '<p>Test description</p>',
+        'salary': {'from': 100000, 'to': 150000}
+    }
+    return mock_vacancy
 
 # фикстуры для helpers
 @pytest.fixture
@@ -100,3 +95,32 @@ def helpers_sample_vacancies():
         }
     ]
 
+# фикстуры для vacancy
+@pytest.fixture
+def base_vacancy_data():
+    """Базовые данные для создания вакансии"""
+    return {
+        'title': 'Python Developer',
+        'url': 'https://example.com'
+    }
+
+@pytest.fixture
+def vacancy_with_full_data(base_vacancy_data):
+    """Фикстура с полными данными вакансии"""
+    base_vacancy_data.update({
+        'salary': 50000.0,
+        'description': 'Требуется опытный разработчик'
+    })
+    return Vacancy(**base_vacancy_data)
+
+# фикстуры для hh_api
+@pytest.fixture
+def hh_api():
+    """Фикстура для создания экземпляра HeadHunterAPI"""
+    return HeadHunterAPI()
+
+@pytest.fixture
+def mock_env_vars(monkeypatch):
+    """Фикстура для установки mock-переменных окружения"""
+    monkeypatch.setenv('HH_CLIENT_ID', 'test_client_id')
+    monkeypatch.setenv('HH_CLIENT_SECRET', 'test_client_secret')
