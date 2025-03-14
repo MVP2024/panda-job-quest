@@ -11,8 +11,16 @@ load_dotenv()
 
 class HeadHunterAPI(AbstractAPI):
     def __init__(self, client_id=None, client_secret=None):
+        # Получение client_id и client_secret
         self._private_client_id = client_id or os.getenv('HH_CLIENT_ID')
         self._private_client_secret = client_secret or os.getenv('HH_CLIENT_SECRET')
+
+        # Логирование инициализации
+        if self._private_client_id and self._private_client_secret:
+            logging.info("Инициализация HeadHunterAPI с приватными учетными данными")
+        else:
+            logging.warning(
+                "Инициализация HeadHunterAPI без приватных учетных данных. Будет использован публичный API.")
 
         # Добавляем _headers
         self._headers = {
@@ -24,7 +32,6 @@ class HeadHunterAPI(AbstractAPI):
         self._public_api_endpoints = [
             'https://api.hh.ru/vacancies',
             'https://hh.ru/search/vacancy'  # Альтернативный API-адрес
-
         ]
 
     def _get_access_token(self) -> str:
@@ -37,6 +44,7 @@ class HeadHunterAPI(AbstractAPI):
         """
         # Проверка наличия учетных данных
         if not self._private_client_id or not self._private_client_secret:
+            logging.error("Попытка получения токена без учетных данных")
             raise ValueError("Отсутствуют учетные данные для приватного API")
 
         # URL для получения токена
@@ -50,22 +58,34 @@ class HeadHunterAPI(AbstractAPI):
         }
 
         try:
+            logging.debug("Отправка запроса на получение токена")
             # Отправка запроса на получение токена
             response = requests.post(token_url, data=token_data)
             response.raise_for_status()
 
             # Извлечение токена из ответа
             token_info = response.json()
-            return token_info.get('access_token')
+            access_token = token_info.get('access_token')
+
+            if access_token:
+                logging.info("Токен доступа успешно получен")
+                return access_token
+            else:
+                logging.warning("Получен пустой токен доступа")
+                raise ValueError("Не удалось получить токен доступа")
 
         except requests.RequestException as e:
             logging.error(f"Ошибка получения токена: {e}")
             raise
 
     def get_vacancies(self, search_query: str, per_page: int = 50) -> List[Dict[str, Any]]:
+        # Логирование начала поиска вакансий
+        logging.info(f"Начало поиска вакансий. Запрос: {search_query}, кол-во на странице: {per_page}")
+
         # Сначала пытаемся использовать приватный API
         try:
             if self._private_client_id and self._private_client_secret:
+                logging.debug("Попытка использовать приватный API")
                 return self._get_private_api_vacancies(search_query, per_page)
         except Exception as private_api_error:
             logging.warning(f"Ошибка приватного API: {private_api_error}")
@@ -73,8 +93,10 @@ class HeadHunterAPI(AbstractAPI):
         # Если приватный API не сработал, используем публичные API-адрес
         for endpoint in self._public_api_endpoints:
             try:
+                logging.debug(f"Попытка использовать публичный API: {endpoint}")
                 vacancies = self._get_public_api_vacancies(endpoint, search_query, per_page)
                 if vacancies:
+                    logging.info(f"Найдено вакансий через {endpoint}: {len(vacancies)}")
                     return vacancies
             except Exception as public_api_error:
                 logging.warning(f"Ошибка публичного API {endpoint}: {public_api_error}")
@@ -85,25 +107,48 @@ class HeadHunterAPI(AbstractAPI):
 
     def _get_private_api_vacancies(self, search_query: str, per_page: int) -> List[Dict[str, Any]]:
         # Логика работы с приватным API
+        logging.debug(f"Получение вакансий через приватный API. Запрос: {search_query}, кол-во на странице: {per_page}")
+
         headers = {
             'Authorization': f'Bearer {self._get_access_token()}',
             'User-Agent': 'Mozilla/5.0'
         }
         params = {"text": search_query, "per_page": per_page}
 
-        response = requests.get('https://api.hh.ru/vacancies', headers=headers, params=params)
-        response.raise_for_status()
-        return response.json().get('items', [])
+        try:
+            response = requests.get('https://api.hh.ru/vacancies', headers=headers, params=params)
+            response.raise_for_status()
+
+            vacancies = response.json().get('items', [])
+            logging.info(f"Получено вакансий через приватный API: {len(vacancies)}")
+
+            return vacancies
+
+        except requests.RequestException as e:
+            logging.error(f"Ошибка при получении вакансий через приватный API: {e}")
+            raise
 
     @staticmethod
     def _get_public_api_vacancies(endpoint: str, search_query: str, per_page: int) -> List[Dict[str, Any]]:
         # Логика работы с публичным API
+        logging.debug(
+            f"Получение вакансий через публичный API. Endpoint: {endpoint}, Запрос: {search_query}, кол-во на странице: {per_page}")
+
         headers = {
             'User-Agent': os.getenv('HH_USER_AGENT', 'Mozilla/5.0'),
             'Accept': 'application/json'
         }
         params = {"text": search_query, "per_page": per_page}
 
-        response = requests.get(endpoint, headers=headers, params=params)
-        response.raise_for_status()
-        return response.json().get('items', [])
+        try:
+            response = requests.get(endpoint, headers=headers, params=params)
+            response.raise_for_status()
+
+            vacancies = response.json().get('items', [])
+            logging.info(f"Получено вакансий через публичный API {endpoint}: {len(vacancies)}")
+
+            return vacancies
+
+        except requests.RequestException as e:
+            logging.error(f"Ошибка при получении вакансий через публичный API {endpoint}: {e}")
+            raise
