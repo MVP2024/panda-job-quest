@@ -1,7 +1,6 @@
 from api.hh_api import HeadHunterAPI
 from models.vacancy import Vacancy
 from storage.abstract_storage import AbstractStorage
-import os
 import pytest
 from unittest.mock import Mock, patch
 from storage.json_storage import JSONStorage
