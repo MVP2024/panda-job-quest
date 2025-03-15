@@ -133,12 +133,13 @@ class Vacancy:
         :param value: Новый URL
         """
         try:
-            if not value:
+            # Проверяем, что после удаления пробелов URL не пустой
+            if not value or not value.strip():
                 logger.warning("Попытка установить пустой URL вакансии")
                 raise ValueError("URL вакансии не может быть пустым")
 
-            self._url = value
-            logger.info(f"URL вакансии успешно установлен: {value}")
+            self._url = value.strip()
+            logger.info(f"URL вакансии успешно установлен: {self._url}")
         except ValueError as e:
             logger.error(f"Ошибка при установке URL: {e}")
             raise
@@ -186,12 +187,14 @@ class Vacancy:
         :param value: Новое описание
         """
         original_value = value
-        self._description = value or 'Описание отсутствует'
+        # Используем strip() для удаления пробелов в начале и конце строки
+        self._description = value.strip() if value and value.strip() else 'Описание отсутствует'
 
         logger.info(f"Описание вакансии установлено: {self._description}")
 
-        if original_value is None or original_value.strip() == '':
-            logger.warning("Установлено описание по умолчанию, так как переданное значение было пустым")
+        if not original_value or not original_value.strip():
+            logger.warning(
+                "Установлено описание по умолчанию, так как переданное значение было пустым или содержало только пробелы")
 
     def __lt__(self, other: 'Vacancy') -> bool:
         """
