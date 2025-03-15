@@ -69,7 +69,8 @@ strict_optional = true
 source = ["api", "models", "storage", "parsers"]
 omit = [
     "tests/*",
-    "*/__init__.py"
+    "*/__init__.py",
+    "main.py"
 ]
 
 [tool.pytest.ini_options]
@@ -77,3 +78,7 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
 addopts = "-v --cov=. --cov-report=term-missing"
+norecursedirs = [
+    "main.py",
+    "venv"
+]
