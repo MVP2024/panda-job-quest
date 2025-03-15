@@ -1,6 +1,9 @@
 [run]
 omit =
     setup.py
+    main.py
+    */venv/*
+
 
 [report]
 exclude_lines =

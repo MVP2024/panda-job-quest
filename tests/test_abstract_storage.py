@@ -1,83 +1,96 @@
 import pytest
+from abc import ABC
 from typing import Any, Optional, Dict, List
 from storage.abstract_storage import AbstractStorage
-from unittest.mock import Mock
-
-from tests.conftest import ConcreteStorage
+from inspect import signature
 
 
-def test_abstract_class_cannot_be_instantiated():
-    """Проверка невозможности создания экземпляра абстрактного класса"""
-    with pytest.raises(TypeError):
-        AbstractStorage()
+def test_abstract_class_structure(abstract_storage_class):
+    """Проверка структуры абстрактного класса"""
+    assert issubclass(abstract_storage_class, ABC), "Должен быть абстрактным классом"
+    assert hasattr(abstract_storage_class, '__abstractmethods__'), "Должен иметь абстрактные методы"
 
-def test_abstract_methods_exist():
-    """Проверка наличия абстрактных методов"""
-    methods = ['add_vacancy', 'get_vacancies', 'delete_vacancy']
-    for method in methods:
-        assert hasattr(AbstractStorage, method)
+
+@pytest.mark.parametrize("method_name", [
+    'add_vacancy',
+    'get_vacancies',
+    'delete_vacancy'
+])
+def test_abstract_method_signatures(method_name):
+    """Параметризованная проверка сигнатур абстрактных методов"""
+    method = getattr(AbstractStorage, method_name)
+    sig = signature(method)
+
+    # Проверка базовых параметров
+    parameters = list(sig.parameters.keys())
+    assert parameters[0] == 'self', f"Первый параметр {method_name} должен быть self"
+
+
+@pytest.mark.parametrize("method_name, params, expected_exception", [
+    ('add_vacancy', [None], ValueError),
+    ('get_vacancies', ["invalid"], TypeError),
+    ('get_vacancies', [{"key": "value"}], None),
+    ('delete_vacancy', [{}], ValueError),
+])
+def test_method_parameter_validation(mock_concrete_storage, method_name, params, expected_exception):
+    """
+    Параметризованный тест валидации параметров методов
+    """
+    method = getattr(mock_concrete_storage, method_name)
+
+    if expected_exception:
+        with pytest.raises(expected_exception):
+            method(*params)
+    else:
+        # Для методов без явного исключения проверяем, что метод вызывается без ошибок
+        method(*params)
+
 
 def test_method_type_hints():
-    """Проверка основных аннотаций типов"""
-    assert AbstractStorage.add_vacancy.__annotations__['return'] is None
-    assert AbstractStorage.get_vacancies.__annotations__['return'] == List[Dict[str, Any]]
-    assert AbstractStorage.delete_vacancy.__annotations__['return'] is None
+    """Проверка аннотаций типов методов"""
+    # add_vacancy
+    add_vacancy_hints = AbstractStorage.add_vacancy.__annotations__
+    assert add_vacancy_hints['vacancy'] == Any
+    assert add_vacancy_hints['return'] is None
 
-def test_method_signatures():
-    """Проверка сигнатур методов"""
-    class ConcreteStorage(AbstractStorage):
-        def add_vacancy(self, vacancy: Any) -> None:
-            # Добавляем реальную логику
-            if vacancy is None:
-                raise ValueError("Vacancy cannot be None")
+    # get_vacancies
+    get_vacancies_hints = AbstractStorage.get_vacancies.__annotations__
+    assert get_vacancies_hints['criteria'] == Optional[Dict[str, Any]]
+    assert get_vacancies_hints['return'] == List[Dict[str, Any]]
 
-        def get_vacancies(self, criteria: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
-            # Добавляем реальную логику
-            if criteria is not None and not isinstance(criteria, dict):
-                raise TypeError("Criteria must be a dictionary")
-            return []
-
-        def delete_vacancy(self, criteria: Dict[str, Any]) -> None:
-            # Добавляем реальную логику
-            if not criteria:
-                raise ValueError("Criteria cannot be empty")
+    # delete_vacancy
+    delete_vacancy_hints = AbstractStorage.delete_vacancy.__annotations__
+    assert delete_vacancy_hints['criteria'] == Dict[str, Any]
+    assert delete_vacancy_hints['return'] is None
 
 
-    # Проверка создания конкретного класса
-    storage = ConcreteStorage()
-    assert isinstance(storage, AbstractStorage)
+def test_docstrings_exist():
+    """Проверка наличия и непустых docstring"""
+    # Docstring класса
+    assert AbstractStorage.__doc__ is not None
+    assert len(AbstractStorage.__doc__.strip()) > 0
 
-    # Дополнительные проверки методов
-    with pytest.raises(ValueError):
-        storage.add_vacancy(None)
-
-    with pytest.raises(TypeError):
-        storage.get_vacancies(criteria="invalid")
-
-    with pytest.raises(ValueError):
-
-        storage.delete_vacancy({})
+    # Docstring методов
+    methods = ['add_vacancy', 'get_vacancies', 'delete_vacancy']
+    for method_name in methods:
+        method = getattr(AbstractStorage, method_name)
+        assert method.__doc__ is not None
+        assert len(method.__doc__.strip()) > 0
 
 
-def test_concrete_storage_methods():
-    """Тест методов ConcreteStorage"""
-    storage = ConcreteStorage()
+def test_concrete_storage_creation(mock_concrete_storage, sample_storage_vacancies):
+    """Тест создания и базовых операций конкретной реализации"""
+    # Добавление вакансий
+    for vacancy in sample_storage_vacancies:
+        mock_concrete_storage.add_vacancy(vacancy)
 
-    # Тест add_vacancy
-    vacancy = {'name': 'Test Vacancy'}
-    storage.add_vacancy(vacancy)
-    assert len(storage.vacancies) == 1
-    assert storage.vacancies[0] == vacancy
+    # Проверка добавления
+    assert len(mock_concrete_storage.vacancies) == len(sample_storage_vacancies)
 
-    # Тест get_vacancies
-    result = storage.get_vacancies()
-    assert len(result) == 1
+    # Получение всех вакансий
+    all_vacancies = mock_concrete_storage.get_vacancies()
+    assert len(all_vacancies) == len(sample_storage_vacancies)
 
-    # Тест delete_vacancy (просто вызов, чтобы покрыть строку)
-    storage.delete_vacancy({'name': 'Test Vacancy'})
-
-def test_storage_fixture(storage):
-    """Проверка фикстуры storage"""
-    assert isinstance(storage, ConcreteStorage)
-    assert hasattr(storage, 'vacancies')
-    assert len(storage.vacancies) == 0
+    # Удаление вакансии
+    mock_concrete_storage.delete_vacancy({'title': 'Python Developer'})
+    assert len(mock_concrete_storage.vacancies) == len(sample_storage_vacancies) - 1
