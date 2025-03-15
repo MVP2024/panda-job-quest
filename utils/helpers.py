@@ -12,7 +12,7 @@ def format_salary(salary: float) -> str:
 		return "Зарплата не указана"
 
 	# Используем locale для форматирования с пробелами и запятой
-	return f"{salary:,.2f} руб.".replace('.', ',').replace(',', ' ')
+	return f"{salary:,.2f} руб.".replace(',', ' ')
 
 
 def filter_vacancies_by_keyword(vacancies: List[Dict[str, Any]], keyword: str) -> List[Dict[str, Any]]:
