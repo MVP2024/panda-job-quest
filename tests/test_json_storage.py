@@ -9,10 +9,12 @@ def test_init_default():
     assert storage._filename.endswith('vacancies.json')
     assert os.path.exists(os.path.dirname(storage._filename))
 
+
 def test_init_with_filename(temp_json_file):
     """Тест инициализации с указанием файла"""
     storage = JSONStorage(filename=temp_json_file)
     assert storage._filename == temp_json_file
+
 
 def test_add_vacancy(json_storage, sample_vacancy):
     """Тест добавления вакансии"""
@@ -21,6 +23,7 @@ def test_add_vacancy(json_storage, sample_vacancy):
     assert len(vacancies) == 1
     assert vacancies[0]['name'] == 'Python Developer'
     assert 'Test description' in vacancies[0]['description']
+
 
 def test_get_vacancies_with_criteria(json_storage, sample_vacancy):
     """Тест получения вакансий по критериям"""
@@ -33,6 +36,7 @@ def test_get_vacancies_with_criteria(json_storage, sample_vacancy):
     # Негативный сценарий
     result_negative = json_storage.get_vacancies({'name': 'Java'})
     assert len(result_negative) == 0
+
 
 def test_delete_vacancy(json_storage, sample_vacancy):
     """Тест удаления вакансии"""
@@ -82,14 +86,16 @@ def test_remove_html_tags_empty_string():
     clean_text = JSONStorage._remove_html_tags('')
     assert clean_text == ''
 
+
 def test_remove_html_tags():
     """Тест удаления HTML-тегов"""
     html_text = '<p>Hello <b>World</b>!</p>'
     clean_text = JSONStorage._remove_html_tags(html_text)
     assert clean_text == 'Hello World!'
 
+
 def test_match_criteria():
     """Тест сопоставления критериев"""
     vacancy = {'name': 'Python Developer', 'description': 'Senior level'}
-    assert JSONStorage._match_criteria(vacancy, {'name': 'Python'}) == True
-    assert JSONStorage._match_criteria(vacancy, {'name': 'Java'}) == False
+    assert JSONStorage._match_criteria(vacancy, {'name': 'Python'}) is True
+    assert JSONStorage._match_criteria(vacancy, {'name': 'Java'}) is False

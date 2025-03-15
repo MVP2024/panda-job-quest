@@ -10,7 +10,7 @@ from storage.json_storage import JSONStorage
 
 
 # фикстуры для class AbstractStorage(ABC)
-class ConcreteStorage(AbstractStorage):
+class TestConcreteStorage(AbstractStorage):
     def __init__(self):
         self.vacancies = []
 
@@ -22,6 +22,7 @@ class ConcreteStorage(AbstractStorage):
 
     def delete_vacancy(self, criteria):
         pass
+
 
 @pytest.fixture
 def abstract_api_class():
@@ -40,16 +41,19 @@ def mock_concrete_api():
 
     return ConcreteAPI()
 
+
 @pytest.fixture
 def mock_file_worker():
     """Фикстура для создания mock объекта file_worker"""
     return Mock()
+
 
 @pytest.fixture
 def mock_requests_get():
     """Фикстура для мокинга requests.get"""
     with patch('requests.get') as mock_get:
         yield mock_get
+
 
 @pytest.fixture
 def sample_vacancies():
@@ -60,10 +64,11 @@ def sample_vacancies():
         {'id': 3, 'name': 'Backend Developer', 'salary': {'from': 90000, 'to': 130000}}
     ]
 
+
 @pytest.fixture
 def storage():
     """Фикстура для создания конкретной реализации хранилища"""
-    return ConcreteStorage()
+    return TestConcreteStorage()
 
 
 # фикстуры для json_storage
@@ -71,6 +76,7 @@ def storage():
 def temp_json_file(tmpdir):
     """Создание временного JSON файла с использованием tmpdir"""
     return str(tmpdir.join('test_vacancies.json'))
+
 
 @pytest.fixture
 def json_storage(temp_json_file):
@@ -89,6 +95,7 @@ def sample_vacancy():
         'salary': {'from': 100000, 'to': 150000}
     }
     return mock_vacancy
+
 
 # фикстуры для helpers
 @pytest.fixture
@@ -114,6 +121,7 @@ def helpers_sample_vacancies():
         }
     ]
 
+
 # фикстуры для vacancy
 @pytest.fixture
 def base_vacancy_data():
@@ -123,6 +131,7 @@ def base_vacancy_data():
         'url': 'https://example.com',
         'employer': 'Test Company'  # Добавлено
     }
+
 
 @pytest.fixture
 def vacancy_with_full_data(base_vacancy_data):
@@ -134,17 +143,20 @@ def vacancy_with_full_data(base_vacancy_data):
     })
     return Vacancy(**base_vacancy_data)
 
+
 # фикстуры для hh_api
 @pytest.fixture
 def hh_api():
     """Фикстура для создания экземпляра HeadHunterAPI"""
     return HeadHunterAPI()
 
+
 @pytest.fixture
 def mock_env_vars(monkeypatch):
     """Фикстура для установки mock-переменных окружения"""
     monkeypatch.setenv('HH_CLIENT_ID', 'test_client_id')
     monkeypatch.setenv('HH_CLIENT_SECRET', 'test_client_secret')
+
 
 # фикстура для base_parser.py
 @pytest.fixture
@@ -159,6 +171,7 @@ def base_parser_file_workers():
         Mock(save_vacancies=lambda x: print("Сохранение вакансий"))  # Mock с методом
     ]
 
+
 @pytest.fixture
 def base_parser_keywords():
     """
@@ -172,6 +185,7 @@ def base_parser_keywords():
         None  # None значение
     ]
 
+
 # фикстуры для abstract_storage
 @pytest.fixture
 def abstract_storage_class():
@@ -183,7 +197,7 @@ def abstract_storage_class():
 def mock_concrete_storage():
     """Фикстура для создания конкретной реализации AbstractStorage"""
 
-    class ConcreteStorage(AbstractStorage):
+    class MockConcreteStorage(AbstractStorage):
         def __init__(self):
             self.vacancies = []
 
@@ -213,7 +227,7 @@ def mock_concrete_storage():
                 )
             ]
 
-    return ConcreteStorage()
+    return MockConcreteStorage()
 
 
 @pytest.fixture
@@ -224,6 +238,7 @@ def sample_storage_vacancies():
         {'id': 2, 'title': 'Data Scientist', 'salary': 150000},
         {'id': 3, 'title': 'Backend Engineer', 'salary': 120000}
     ]
+
 
 # фикстуры для user_interaction
 @pytest.fixture
@@ -246,12 +261,14 @@ def sample_vacancies_user_interaction():
         )
     ]
 
+
 @pytest.fixture
 def mock_input_sequence():
     """Фикстура для последовательности пользовательского ввода"""
     def _create_input_sequence(choices):
         return choices
     return _create_input_sequence
+
 
 @pytest.fixture
 def mock_api_data():

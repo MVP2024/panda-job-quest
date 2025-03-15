@@ -5,11 +5,13 @@ from dotenv import load_dotenv
 from .abstract_api import AbstractAPI
 from logger.logger import setup_logger
 
+
 # Загрузка переменных окружения
 load_dotenv()
 
 # Настройка логгера для модуля
 logger = setup_logger(__name__)
+
 
 class HeadHunterAPI(AbstractAPI):
     def __init__(self, client_id=None, client_secret=None):
@@ -134,7 +136,8 @@ class HeadHunterAPI(AbstractAPI):
     def _get_public_api_vacancies(endpoint: str, search_query: str, per_page: int) -> List[Dict[str, Any]]:
         # Логика работы с публичным API
         logger.debug(
-            f"Получение вакансий через публичный API. Endpoint: {endpoint}, Запрос: {search_query}, кол-во на странице: {per_page}")
+            f"Получение вакансий через публичный API. "
+            f"Endpoint: {endpoint}, Запрос: {search_query}, кол-во на странице: {per_page}")
 
         headers = {
             'User-Agent': os.getenv('HH_USER_AGENT', 'Mozilla/5.0'),

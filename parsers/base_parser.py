@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from logger.logger import setup_logger
 
+
 class BaseParser(ABC):
     """
     Абстрактный базовый класс для парсеров
@@ -17,7 +18,8 @@ class BaseParser(ABC):
 
         try:
             self.file_worker = file_worker
-            self.logger.info(f"Базовый парсер успешно инициализирован с file_worker типа: {type(file_worker).__name__}")
+            (self.logger.info
+             (f"Базовый парсер успешно инициализирован с file_worker типа: {type(file_worker).__name__}"))
         except Exception as e:
             self.logger.error(f"Ошибка при инициализации базового парсера: {e}")
             raise

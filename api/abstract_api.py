@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 from logger.logger import setup_logger
 
+
 class AbstractAPI(ABC):
     """
     Абстрактный базовый класс для работы с API вакансий

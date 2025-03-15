@@ -4,14 +4,15 @@ from typing import Optional, Dict, Any, Union
 # Настройка логгера для модуля
 logger = setup_logger(__name__)
 
+
 class Vacancy:
     """
     Класс для представления вакансии
     """
-    __slots__ = ['_title', '_url', '_salary', '_description', '_employer']  # Добавлено _employer
+    __slots__ = ['_title', '_url', '_salary', '_description', '_employer']
 
     def __init__(self, title: str, url: str, salary: Union[Dict[str, Any], float, None] = None,
-                 description: str = "Описание отсутствует", employer: Optional[str] = None):  # Добавлен параметр employer
+                 description: str = "Описание отсутствует", employer: Optional[str] = None):
         """
         Инициализация вакансии с валидацией и обработкой данных
 
@@ -25,7 +26,7 @@ class Vacancy:
         self._url = ''
         self._salary = 0.0
         self._description = ''
-        self._employer = ''  # Инициализация нового поля
+        self._employer = ''
 
         # Используем setter-методы для установки значений
         try:
@@ -33,7 +34,7 @@ class Vacancy:
             self.url = url
             self.description = description
             self.salary = salary
-            self.employer = employer  # Добавлено
+            self.employer = employer
 
             self._validate_data()
             logger.info(f"Вакансия успешно создана: {title}")
@@ -52,7 +53,7 @@ class Vacancy:
             'url': self._url,
             'salary': self._salary,
             'description': self._description,
-            'employer': self._employer  # Добавлено
+            'employer': self._employer
         }
 
         logger.info(f"Создан словарь вакансии: {vacancy_dict}")
@@ -196,7 +197,8 @@ class Vacancy:
 
         if not original_value or not original_value.strip():
             logger.warning(
-                "Установлено описание по умолчанию, так как переданное значение было пустым или содержало только пробелы")
+                "Установлено описание по умолчанию, "
+                "так как переданное значение было пустым или содержало только пробелы")
 
     def __lt__(self, other: 'Vacancy') -> bool:
         """

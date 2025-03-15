@@ -66,7 +66,6 @@ class HHParser(BaseParser):
 			self.logger.info(f"Всего загружено вакансий: {len(self.vacancies)}")
 			return self.vacancies
 
-
 		except requests.RequestException as e:
 			error_message = f"Ошибка при загрузке вакансий: {e}"
 			print(error_message)  # Явный вывод
