@@ -30,5 +30,5 @@ class BaseParser(ABC):
         :param keyword: Ключевое слово для поиска
         :return: Список вакансий
         """
-        self.logger.debug(f"Вызов абстрактного метода load_vacancies с ключевым словом: {keyword}")
-        raise NotImplementedError("Метод load_vacancies должен быть реализован в дочернем классе")
+        # Абстрактный метод не должен содержать реализации
+        pass

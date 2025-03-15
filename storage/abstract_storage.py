@@ -1,9 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
-from logger.logger import setup_logger
 
-# Настройка логгера для этого модуля
-logger = setup_logger(__name__)
 
 class AbstractStorage(ABC):
     """
@@ -17,7 +14,6 @@ class AbstractStorage(ABC):
 
         :param vacancy: Вакансия для добавления
         """
-        logger.debug(f"AbstractStorage: Попытка добавить вакансию {vacancy}")
         pass
 
     @abstractmethod
@@ -28,7 +24,6 @@ class AbstractStorage(ABC):
         :param criteria: Критерии фильтрации
         :return: Список вакансий
         """
-        logger.debug(f"AbstractStorage: Получение вакансий с критериями {criteria}")
         pass
 
     @abstractmethod
@@ -38,5 +33,4 @@ class AbstractStorage(ABC):
 
         :param criteria: Критерии удаления
         """
-        logger.debug(f"AbstractStorage: Попытка удалить вакансию с критериями {criteria}")
         pass

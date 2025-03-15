@@ -3,9 +3,15 @@ import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from .abstract_storage import AbstractStorage
+from logger.logger import setup_logger  # Импорт логгера
+
+# Настройка логгера
+logger = setup_logger(__name__)
+
 
 class JSONStorage(AbstractStorage):
     def __init__(self, filename: str = None):
+        logger.info(f"Инициализация JSONStorage с filename: {filename}")
         if filename is None:
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             self._data_dir = os.path.join(base_dir, 'data')
@@ -15,19 +21,21 @@ class JSONStorage(AbstractStorage):
             self._filename = filename
             self._data_dir = os.path.dirname(filename)
 
+        logger.debug(f"Путь к файлу данных: {self._filename}")
+
     def add_vacancy(self, vacancy: Any, create_new_file: bool = False) -> None:
         """
         Добавление вакансии с опциональным созданием нового файла
-
-        :param vacancy: Объект вакансии для добавления
-        :param create_new_file: Флаг для создания нового файла с отметкой времени
         """
+        logger.info(f"Добавление вакансии. Создание нового файла: {create_new_file}")
+
         # Если указан флаг создания нового файла или файл пустой
         if create_new_file or not os.path.exists(self._filename) or os.path.getsize(self._filename) == 0:
             # Создаем новый файл с отметкой времени
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             new_filename = os.path.join(self._data_dir, f'vacancies_{timestamp}.json')
             self._filename = new_filename
+            logger.debug(f"Создан новый файл: {new_filename}")
 
         vacancies = self._load_vacancies()
         vacancy_dict = vacancy.to_dict()
@@ -39,30 +47,39 @@ class JSONStorage(AbstractStorage):
         if vacancy_dict not in vacancies:
             vacancies.append(vacancy_dict)
             self._save_vacancies(vacancies)
+            logger.info(f"Вакансия добавлена: {vacancy_dict.get('title', 'Без названия')}")
+        else:
+            logger.debug("Вакансия уже существует, пропуск добавления")
 
     def get_vacancies(self, criteria: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """
         Получение вакансий по критериям
-
-        :param criteria: Критерии фильтрации
-        :return: Список вакансий
         """
+        logger.info(f"Получение вакансий с критериями: {criteria}")
+
         vacancies = self._load_vacancies()
 
         if criteria:
-            return [v for v in vacancies if self._match_criteria(v, criteria)]
+            filtered_vacancies = [v for v in vacancies if self._match_criteria(v, criteria)]
+            logger.debug(f"Найдено вакансий по критериям: {len(filtered_vacancies)}")
+            return filtered_vacancies
 
         return vacancies
 
     def delete_vacancy(self, criteria: Dict[str, Any]) -> None:
         """
         Удаление вакансий по критериям
-
-        :param criteria: Критерии удаления
         """
+        logger.info(f"Удаление вакансий по критериям: {criteria}")
+
         vacancies = self._load_vacancies()
+        initial_count = len(vacancies)
+
         vacancies = [v for v in vacancies if not self._match_criteria(v, criteria)]
         self._save_vacancies(vacancies)
+
+        deleted_count = initial_count - len(vacancies)
+        logger.debug(f"Удалено вакансий: {deleted_count}")
 
     def get_vacancies_by_salary_range(self, min_salary: float = 0, max_salary: float = float('inf')) -> List[
         Dict[str, Any]]:

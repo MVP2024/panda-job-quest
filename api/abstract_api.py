@@ -25,5 +25,4 @@ class AbstractAPI(ABC):
 
         Примечание: Метод должен включать логирование на разных уровнях
         """
-        self.logger.debug(f"Вызов абстрактного метода get_vacancies с параметрами: search_query={search_query}, per_page={per_page}")
-        raise NotImplementedError("Метод get_vacancies должен быть реализован в дочернем классе")
+        pass
