@@ -8,10 +8,10 @@ class Vacancy:
     """
     Класс для представления вакансии
     """
-    __slots__ = ['_title', '_url', '_salary', '_description']
+    __slots__ = ['_title', '_url', '_salary', '_description', '_employer']  # Добавлено _employer
 
     def __init__(self, title: str, url: str, salary: Union[Dict[str, Any], float, None] = None,
-                 description: str = "Описание отсутствует"):
+                 description: str = "Описание отсутствует", employer: Optional[str] = None):  # Добавлен параметр employer
         """
         Инициализация вакансии с валидацией и обработкой данных
 
@@ -19,11 +19,13 @@ class Vacancy:
         :param url: URL вакансии (обязательно)
         :param salary: Зарплата (опционально)
         :param description: Описание вакансии (опционально)
+        :param employer: Название работодателя (опционально)
         """
         self._title = ''
         self._url = ''
         self._salary = 0.0
         self._description = ''
+        self._employer = ''  # Инициализация нового поля
 
         # Используем setter-методы для установки значений
         try:
@@ -31,6 +33,7 @@ class Vacancy:
             self.url = url
             self.description = description
             self.salary = salary
+            self.employer = employer  # Добавлено
 
             self._validate_data()
             logger.info(f"Вакансия успешно создана: {title}")
@@ -48,11 +51,26 @@ class Vacancy:
             'title': self._title,
             'url': self._url,
             'salary': self._salary,
-            'description': self._description
+            'description': self._description,
+            'employer': self._employer  # Добавлено
         }
 
         logger.info(f"Создан словарь вакансии: {vacancy_dict}")
         return vacancy_dict
+
+    @property
+    def employer(self) -> str:
+        return self._employer
+
+    @employer.setter
+    def employer(self, value: Optional[str]) -> None:
+        """
+        Setter для свойства employer
+
+        :param value: Название работодателя
+        """
+        self._employer = value or 'Работодатель не указан'
+        logger.info(f"Работодатель установлен: {self._employer}")
 
     def _validate_data(self) -> None:
         """
@@ -77,7 +95,7 @@ class Vacancy:
             logger.info(f"Зарплата для вакансии '{self._title}' не указана")
             return "Зарплата не указана"
 
-        formatted_salary = f"{self.salary:,.2f} руб."
+        formatted_salary = f"{self.salary:,.2f} руб.".replace(',', ' ')
         logger.info(f"Отформатированная зарплата для вакансии '{self._title}': {formatted_salary}")
         return formatted_salary
 
