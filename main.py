@@ -15,6 +15,9 @@ def main():
 			print(f"Название: {vacancy['name']}")
 			print(f"Зарплата: {vacancy.get('salary', 'Не указана')}")
 			print(f"Работодатель: {vacancy['employer']['name']}")
+			description = vacancy.get('snippet', {}).get('requirement', 'Описание отсутствует')
+			print(f"Описание: {description}")
+			print("Ссылка: ", vacancy.get('alternate_url', 'Не указана'))
 			print("---")
 
 		# Основное меню приложения
