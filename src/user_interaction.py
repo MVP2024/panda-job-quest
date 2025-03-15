@@ -9,15 +9,22 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from api.hh_api import HeadHunterAPI
 from models.vacancy import Vacancy
 from storage.json_storage import JSONStorage
+from logger.logger import setup_logger  # Импортируем setup_logger
+
+# Настройка логгера
+logger = setup_logger(__name__)
 
 
 def display_vacancies(vacancies: List[Vacancy]) -> None:
 	"""
-    Вывод информации о вакансиях
+	Вывод информации о вакансиях
 
-    :param vacancies: Список вакансий для отображения
-    """
+	:param vacancies: Список вакансий для отображения
+	"""
+	logger.info(f"Отображение вакансий. Количество: {len(vacancies)}")
+
 	if not vacancies:
+		logger.warning("Вакансии не найдены.")
 		print("Вакансии не найдены.")
 		return
 
@@ -31,6 +38,7 @@ def display_vacancies(vacancies: List[Vacancy]) -> None:
 
 def main_menu() -> None:
 	try:
+		logger.info("Запуск главного меню")
 		api = HeadHunterAPI()
 		storage = JSONStorage()
 
@@ -47,9 +55,11 @@ def main_menu() -> None:
 				if choice == '1':
 					# Простой поиск вакансий
 					profession = input("Какую работу вы ищете? (например, программист, бухгалтер): ")
+					logger.info(f"Поиск вакансий по профессии: {profession}")
 					print(f"Выполняется поиск вакансий по запросу: {profession}")
 
 					vacancies_data = api.get_vacancies(profession)
+					logger.info(f"Получено вакансий из API: {len(vacancies_data)}")
 					print(f"Получено вакансий: {len(vacancies_data)}")
 
 					# Преобразование данных API в объекты Vacancy
@@ -65,14 +75,19 @@ def main_menu() -> None:
 					# Сохранение вакансий
 					for vacancy in vacancies:
 						storage.add_vacancy(vacancy)
+						logger.debug(f"Добавлена вакансия: {vacancy.title}")
 
+					logger.info(f"Найдено и сохранено вакансий: {len(vacancies)}")
 					print(f"Найдено {len(vacancies)} вакансий")
 					display_vacancies(vacancies)
 
 				elif choice == '2':
 					# Топ вакансий по зарплате
 					top_n = int(input("Сколько лучших вакансий показать? "))
+					logger.info(f"Запрос топ-{top_n} вакансий")
+
 					all_vacancies = storage.get_vacancies()
+					logger.debug(f"Всего вакансий в хранилище: {len(all_vacancies)}")
 
 					# Сортировка по зарплате
 					sorted_vacancies = sorted(
@@ -81,36 +96,46 @@ def main_menu() -> None:
 						reverse=True
 					)[:top_n]
 
+					logger.info(f"Отображение топ-{len(sorted_vacancies)} вакансий")
 					display_vacancies(sorted_vacancies)
 
 				elif choice == '3':
 					# Поиск по ключевому слову
 					keyword = input("Введите ключевое слово для поиска (например, удаленная работа): ")
+					logger.info(f"Поиск вакансий по ключевому слову: {keyword}")
 
 					# Получение вакансий и преобразование в объекты Vacancy
 					found_vacancies = storage.get_vacancies({'title': keyword})
+					logger.debug(f"Найдено вакансий по заголовку: {len(found_vacancies)}")
 
 					if not found_vacancies:
 						# Если по заголовку не нашли, ищем в описании
 						found_vacancies = storage.get_vacancies({'description': keyword})
+						logger.debug(f"Найдено вакансий по описанию: {len(found_vacancies)}")
 
 					filtered_vacancies = [
 						Vacancy(**v) for v in found_vacancies
 					]
 
+					logger.info(f"Найдено вакансий по ключевому слову: {len(filtered_vacancies)}")
 					display_vacancies(filtered_vacancies)
 
 				elif choice == '4':
+					logger.info("Выход из программы")
 					break
 				else:
+					logger.warning(f"Выбран неверный пункт меню: {choice}")
 					print("Неверный выбор. Попробуйте снова.")
 
 			except ValueError as e:
+				logger.error(f"Ошибка ввода: {e}")
 				print(f"Ошибка ввода: {e}")
 			except Exception as e:
+				logger.error(f"Произошла ошибка: {e}", exc_info=True)
 				print(f"Произошла ошибка: {e}")
 
 	except Exception as e:
+		logger.critical(f"Критическая ошибка: {e}", exc_info=True)
 		print(f"Критическая ошибка: {e}")
 		import traceback
 		traceback.print_exc()

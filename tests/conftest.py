@@ -123,3 +123,29 @@ def mock_env_vars(monkeypatch):
     """Фикстура для установки mock-переменных окружения"""
     monkeypatch.setenv('HH_CLIENT_ID', 'test_client_id')
     monkeypatch.setenv('HH_CLIENT_SECRET', 'test_client_secret')
+
+# фикстура для base_parser.py
+@pytest.fixture
+def base_parser_file_workers():
+    """
+    Фикстура с различными типами file_worker для BaseParser
+    """
+    return [
+        None,  # Без file_worker
+        Mock(),  # Простой Mock
+        Mock(name='custom_file_worker'),  # Mock с именем
+        Mock(save_vacancies=lambda x: print("Сохранение вакансий"))  # Mock с методом
+    ]
+
+@pytest.fixture
+def base_parser_keywords():
+    """
+    Фикстура с ключевыми словами для тестирования BaseParser
+    """
+    return [
+        'python',
+        'java',
+        'data science',
+        '',  # Пустое ключевое слово
+        None  # None значение
+    ]
