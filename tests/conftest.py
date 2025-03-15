@@ -224,3 +224,44 @@ def sample_storage_vacancies():
         {'id': 2, 'title': 'Data Scientist', 'salary': 150000},
         {'id': 3, 'title': 'Backend Engineer', 'salary': 120000}
     ]
+
+# фикстуры для user_interaction
+@pytest.fixture
+def sample_vacancies_user_interaction():
+    """Фикстура с образцом вакансий для тестирования"""
+    return [
+        Vacancy(
+            title='Python Developer',
+            url='https://example.com/1',
+            salary=100000,
+            description='Крутая вакансия',
+            employer='Google'
+        ),
+        Vacancy(
+            title='Data Scientist',
+            url='https://example.com/2',
+            salary=120000,
+            description='Аналитика данных',
+            employer='Яндекс'
+        )
+    ]
+
+@pytest.fixture
+def mock_input_sequence():
+    """Фикстура для последовательности пользовательского ввода"""
+    def _create_input_sequence(choices):
+        return choices
+    return _create_input_sequence
+
+@pytest.fixture
+def mock_api_data():
+    """Фикстура с mock-данными API"""
+    return [
+        {
+            'name': 'Python Developer',
+            'alternate_url': 'https://example.com',
+            'salary': {'from': 100000},
+            'snippet': {'requirement': 'Test description'},
+            'employer': {'name': 'Test Company'}
+        }
+    ]

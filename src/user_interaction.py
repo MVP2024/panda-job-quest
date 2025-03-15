@@ -1,25 +1,25 @@
-import json
 import sys
 import os
-from typing import List, Dict, Any
-
-# Добавляем путь к корневой директории проекта
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from typing import List
 from api.hh_api import HeadHunterAPI
 from models.vacancy import Vacancy
 from storage.json_storage import JSONStorage
-from logger.logger import setup_logger  # Импортируем setup_logger
+from logger.logger import setup_logger
+
+
+# Добавляем путь к корневой директории проекта
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Настройка логгера
 logger = setup_logger(__name__)
 
 
-def display_vacancies(vacancies: List[Vacancy]) -> None:
+def display_vacancies(vacancies: List[Vacancy], brief_mode: bool = False) -> None:
 	"""
 	Вывод информации о вакансиях
 
 	:param vacancies: Список вакансий для отображения
+	:param brief_mode: Краткий режим отображения (по умолчанию False)
 	"""
 	logger.info(f"Отображение вакансий. Количество: {len(vacancies)}")
 
@@ -28,12 +28,20 @@ def display_vacancies(vacancies: List[Vacancy]) -> None:
 		print("Вакансии не найдены.")
 		return
 
-	for vacancy in vacancies:
-		print(f"Название: {vacancy.title}")
-		print(f"Зарплата: {vacancy.format_salary()}")
-		print(f"URL: {vacancy.url}")
-		print(f"Описание: {vacancy.description}")
-		print("---")
+	for i, vacancy in enumerate(vacancies, 1):
+		print(f"\n{i}. Название: {vacancy.title}")
+		print(f"   Работодатель: {vacancy.employer}")
+		print(f"   Зарплата: {vacancy.format_salary()}")
+		print(f"   URL: {vacancy.url}")
+
+		if brief_mode:
+			# Краткий режим - первые 100 символов
+			print(f"   Описание: {vacancy.description[:100]}...")
+		else:
+			# Полное описание
+			print(f"   Описание: {vacancy.description}")
+
+		print("-" * 50)
 
 
 def main_menu() -> None:
@@ -68,7 +76,8 @@ def main_menu() -> None:
 							title=vacancy['name'],
 							url=vacancy.get('alternate_url', ''),
 							salary=vacancy.get('salary', {}),
-							description=vacancy.get('snippet', {}).get('requirement', 'Описание отсутствует')
+							description=vacancy.get('snippet', {}).get('requirement', 'Описание отсутствует'),
+							employer=vacancy.get('employer', {}).get('name', 'Работодатель не указан')
 						) for vacancy in vacancies_data
 					]
 
@@ -91,7 +100,8 @@ def main_menu() -> None:
 
 					# Сортировка по зарплате
 					sorted_vacancies = sorted(
-						[Vacancy(**v) for v in all_vacancies],
+						[Vacancy(**{**v, 'employer': v.get('employer', 'Работодатель не указан')}) for v in
+						 all_vacancies],
 						key=lambda x: x.salary or 0,
 						reverse=True
 					)[:top_n]
@@ -114,7 +124,8 @@ def main_menu() -> None:
 						logger.debug(f"Найдено вакансий по описанию: {len(found_vacancies)}")
 
 					filtered_vacancies = [
-						Vacancy(**v) for v in found_vacancies
+						Vacancy(**{**v, 'employer': v.get('employer', 'Работодатель не указан')})
+						for v in found_vacancies
 					]
 
 					logger.info(f"Найдено вакансий по ключевому слову: {len(filtered_vacancies)}")
