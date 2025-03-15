@@ -69,7 +69,8 @@ class Vacancy:
 
         :param value: Название работодателя
         """
-        self._employer = value or 'Работодатель не указан'
+        # Используем strip() для удаления пробелов в начале и конце строки
+        self._employer = value.strip() if value and value.strip() else 'Работодатель не указан'
         logger.info(f"Работодатель установлен: {self._employer}")
 
     def _validate_data(self) -> None:
@@ -111,12 +112,13 @@ class Vacancy:
         :param value: Новое значение заголовка
         """
         try:
-            if not value:
+            # Проверяем, что после удаления пробелов заголовок не пустой
+            if not value or not value.strip():
                 logger.warning("Попытка установить пустое название вакансии")
                 raise ValueError("Название вакансии не может быть пустым")
 
-            self._title = value
-            logger.info(f"Заголовок вакансии успешно установлен: {value}")
+            self._title = value.strip()
+            logger.info(f"Заголовок вакансии успешно установлен: {self._title}")
         except ValueError as e:
             logger.error(f"Ошибка при установке заголовка: {e}")
             raise
