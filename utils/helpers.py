@@ -21,6 +21,10 @@ def filter_vacancies_by_keyword(vacancies: List[Dict[str, Any]], keyword: str) -
 	:param keyword: Ключевое слово для поиска
 	:return: Отфильтрованный список вакансий
 	"""
+	# Если ключевое слово пустое, возвращаем пустой список
+	if not keyword or not keyword.strip():
+		return []
+
 	return [
 		vacancy for vacancy in vacancies
 		if keyword.lower() in vacancy.get('description', '').lower() or
