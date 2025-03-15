@@ -74,17 +74,17 @@ class TestMainMenu:
                     'title': 'Python Developer',
                     'salary': 100000,
                     'employer': 'Google',
-                    'url': 'https://example.com/1',  # Добавлен url
-                    'description': 'Python developer description'  # Добавлено описание
+                    'url': 'https://example.com/1',
+                    'description': 'Python developer description'
                 },
                 {
                     'title': 'Data Scientist',
                     'salary': 150000,
                     'employer': 'Яндекс',
-                    'url': 'https://example.com/2',  # Добавлен url
-                    'description': 'Data scientist description'  # Добавлено описание
+                    'url': 'https://example.com/2',
+                    'description': 'Data scientist description'
                 }
-            ]) as mock_get_vacancies,
+            ]) as _,  # Используем _, чтобы подавить предупреждение
             patch('src.user_interaction.display_vacancies') as mock_display
         ):
             main_menu()
@@ -115,15 +115,18 @@ class TestMainMenu:
                     {
                         'title': 'Python Developer',
                         'description': 'Python backend',
-                        'url': 'https://example.com/1',  # Добавлен url
-                        'employer': 'Test Company',  # Добавлен работодатель
-                        'salary': 100000  # Добавлена зарплата
+                        'url': 'https://example.com/1',
+                        'employer': 'Test Company',
+                        'salary': 100000
                     }
                 ]  # Результат по описанию
             ]) as mock_get_vacancies,
             patch('src.user_interaction.display_vacancies') as mock_display
         ):
             main_menu()
+
+            # Проверяем вызов get_vacancies
+            assert mock_get_vacancies.call_count == 2  # Два вызова - по заголовку и описанию
 
             # Проверяем вызов display_vacancies
             mock_display.assert_called_once()
