@@ -1,3 +1,6 @@
+from typing import List, Dict, Any, Optional
+
+from api.abstract_api import AbstractAPI
 from api.hh_api import HeadHunterAPI
 from models.vacancy import Vacancy
 from storage.abstract_storage import AbstractStorage
@@ -19,6 +22,23 @@ class ConcreteStorage(AbstractStorage):
 
     def delete_vacancy(self, criteria):
         pass
+
+@pytest.fixture
+def abstract_api_class():
+    """Фикстура для предоставления класса AbstractAPI"""
+    return AbstractAPI
+
+
+@pytest.fixture
+def mock_concrete_api():
+    """Фикстура для создания конкретной реализации AbstractAPI"""
+
+    class ConcreteAPI(AbstractAPI):
+        def get_vacancies(self, search_query: str, per_page: int = 50) -> List[Dict[str, Any]]:
+            # Минимальная реализация для теста
+            return [{'title': search_query}]
+
+    return ConcreteAPI()
 
 @pytest.fixture
 def mock_file_worker():
@@ -100,7 +120,8 @@ def base_vacancy_data():
     """Базовые данные для создания вакансии"""
     return {
         'title': 'Python Developer',
-        'url': 'https://example.com'
+        'url': 'https://example.com',
+        'employer': 'Test Company'  # Добавлено
     }
 
 @pytest.fixture
@@ -108,7 +129,8 @@ def vacancy_with_full_data(base_vacancy_data):
     """Фикстура с полными данными вакансии"""
     base_vacancy_data.update({
         'salary': 50000.0,
-        'description': 'Требуется опытный разработчик'
+        'description': 'Требуется опытный разработчик',
+        'employer': 'Google'  # Добавлено
     })
     return Vacancy(**base_vacancy_data)
 
@@ -148,4 +170,57 @@ def base_parser_keywords():
         'data science',
         '',  # Пустое ключевое слово
         None  # None значение
+    ]
+
+# фикстуры для abstract_storage
+@pytest.fixture
+def abstract_storage_class():
+    """Фикстура для предоставления класса AbstractStorage"""
+    return AbstractStorage
+
+
+@pytest.fixture
+def mock_concrete_storage():
+    """Фикстура для создания конкретной реализации AbstractStorage"""
+
+    class ConcreteStorage(AbstractStorage):
+        def __init__(self):
+            self.vacancies = []
+
+        def add_vacancy(self, vacancy: Any) -> None:
+            if vacancy is None:
+                raise ValueError("Vacancy cannot be None")
+            self.vacancies.append(vacancy)
+
+        def get_vacancies(self, criteria: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+            if criteria is not None and not isinstance(criteria, dict):
+                raise TypeError("Criteria must be a dictionary")
+
+            if criteria:
+                return [v for v in self.vacancies if all(v.get(k) == v for k, v in criteria.items())]
+            return self.vacancies
+
+        def delete_vacancy(self, criteria: Dict[str, Any]) -> None:
+            if not criteria:
+                raise ValueError("Criteria cannot be empty")
+
+            # Корректная фильтрация с проверкой соответствия критериям
+            self.vacancies = [
+                vacancy for vacancy in self.vacancies
+                if not all(
+                    vacancy.get(key) == value
+                    for key, value in criteria.items()
+                )
+            ]
+
+    return ConcreteStorage()
+
+
+@pytest.fixture
+def sample_storage_vacancies():
+    """Фикстура с примером списка вакансий для тестирования хранилища"""
+    return [
+        {'id': 1, 'title': 'Python Developer', 'salary': 100000},
+        {'id': 2, 'title': 'Data Scientist', 'salary': 150000},
+        {'id': 3, 'title': 'Backend Engineer', 'salary': 120000}
     ]
