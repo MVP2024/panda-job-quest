@@ -1,5 +1,6 @@
+from typing import Any, Dict, Optional, Union
+
 from logger.logger import setup_logger
-from typing import Optional, Dict, Any, Union
 
 # Настройка логгера для модуля
 logger = setup_logger(__name__)
@@ -7,12 +8,19 @@ logger = setup_logger(__name__)
 
 class Vacancy:
     """
-    Класс для представления вакансии
+    Класс для представления вакансии с расширенной валидацией и обработкой данных
     """
-    __slots__ = ['_title', '_url', '_salary', '_description', '_employer']
 
-    def __init__(self, title: str, url: str, salary: Union[Dict[str, Any], float, None] = None,
-                 description: str = "Описание отсутствует", employer: Optional[str] = None):
+    __slots__ = ["_title", "_url", "_salary", "_description", "_employer"]
+
+    def __init__(
+        self,
+        title: str,
+        url: str,
+        salary: Union[Dict[str, Any], float, None] = None,
+        description: str = "Описание отсутствует",
+        employer: Optional[str] = None,
+    ):
         """
         Инициализация вакансии с валидацией и обработкой данных
 
@@ -22,24 +30,97 @@ class Vacancy:
         :param description: Описание вакансии (опционально)
         :param employer: Название работодателя (опционально)
         """
-        self._title = ''
-        self._url = ''
-        self._salary = 0.0
-        self._description = ''
-        self._employer = ''
+        self._title: str = ""
+        self._url: str = ""
+        self._salary: Optional[float] = 0.0
+        self._description: str = ""
+        self._employer: str = ""
 
-        # Используем setter-методы для установки значений
         try:
-            self.title = title
-            self.url = url
-            self.description = description
-            self.salary = salary
-            self.employer = employer
+            self.title = self._validate_title(title)
+            self.url = self._validate_url(url)
+            self.description = self._validate_description(description)
+            self.salary = self._process_salary(salary)
+            self.employer = self._validate_employer(employer)
 
-            self._validate_data()
-            logger.info(f"Вакансия успешно создана: {title}")
+            logger.info(f"Вакансия успешно создана: {self._title}")
         except ValueError as e:
             logger.error(f"Ошибка при создании вакансии: {e}")
+            raise
+
+    def _validate_title(self, value: str) -> str:
+        """
+        Валидация и очистка названия вакансии
+
+        :param value: Исходное название
+        :return: Очищенное название
+        """
+        if not value or not value.strip():
+            logger.warning("Попытка установить пустое название вакансии")
+            raise ValueError("Название вакансии не может быть пустым")
+        return value.strip()
+
+    def _validate_url(self, value: str) -> str:
+        """
+        Валидация и очистка URL вакансии
+
+        :param value: Исходный URL
+        :return: Очищенный URL
+        """
+        if not value or not value.strip():
+            logger.warning("Попытка установить пустой URL вакансии")
+            raise ValueError("URL вакансии не может быть пустым")
+        return value.strip()
+
+    def _validate_description(self, value: Optional[str]) -> str:
+        """
+        Валидация и очистка описания вакансии
+
+        :param value: Исходное описание
+        :return: Очищенное описание
+        """
+        if not value or not value.strip():
+            logger.warning("Описание вакансии пустое, установлено значение по умолчанию")
+            return "Описание отсутствует"
+        return value.strip()
+
+    def _validate_employer(self, value: Optional[str]) -> str:
+        """
+        Валидация и очистка названия работодателя
+
+        :param value: Исходное название работодателя
+        :return: Очищенное название работодателя
+        """
+        if not value or not value.strip():
+            logger.warning("Название работодателя пустое, установлено значение по умолчанию")
+            return "Работодатель не указан"
+        return value.strip()
+
+    def _process_salary(self, value: Union[Dict[str, Any], float, None]) -> Optional[float]:
+        """
+        Обработка входящего значения зарплаты
+
+        :param value: Входящее значение зарплаты
+        :return: Обработанное значение зарплаты
+        """
+        try:
+            if isinstance(value, dict):
+                salary_from = value.get("from", 0) or 0
+                salary_to = value.get("to", 0) or 0
+                processed_salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
+                logger.info(
+                    f"Зарплата обработана из словаря: from {salary_from}, to {salary_to}, средняя {processed_salary}"
+                )
+                return processed_salary
+            elif value is None:
+                logger.info("Зарплата обработана как 0 (значение None)")
+                return 0.0
+            else:
+                processed_salary = float(value)
+                logger.info(f"Зарплата обработана напрямую: {processed_salary}")
+                return processed_salary
+        except Exception as e:
+            logger.error(f"Ошибка при обработке зарплаты: {e}")
             raise
 
     def to_dict(self) -> Dict[str, Any]:
@@ -48,56 +129,25 @@ class Vacancy:
 
         :return: Словарь с данными вакансии
         """
-        vacancy_dict = {
-            'title': self._title,
-            'url': self._url,
-            'salary': self._salary,
-            'description': self._description,
-            'employer': self._employer
+        return {
+            "title": self._title,
+            "url": self._url,
+            "salary": self._salary,
+            "description": self._description,
+            "employer": self._employer,
         }
 
-        logger.info(f"Создан словарь вакансии: {vacancy_dict}")
-        return vacancy_dict
-
-    @property
-    def employer(self) -> str:
-        return self._employer
-
-    @employer.setter
-    def employer(self, value: Optional[str]) -> None:
-        """
-        Setter для свойства employer
-
-        :param value: Название работодателя
-        """
-        # Используем strip() для удаления пробелов в начале и конце строки
-        self._employer = value.strip() if value and value.strip() else 'Работодатель не указан'
-        logger.info(f"Работодатель установлен: {self._employer}")
-
-    def _validate_data(self) -> None:
-        """
-        Приватный метод валидации данных вакансии
-        """
-        try:
-            if not self._title:
-                logger.warning("Попытка создания вакансии с пустым названием")
-                raise ValueError("Название вакансии не может быть пустым")
-
-            if not self._url:
-                logger.warning("Попытка создания вакансии с пустым URL")
-                raise ValueError("URL вакансии не может быть пустым")
-
-            logger.info(f"Валидация вакансии '{self._title}' успешно завершена")
-        except ValueError as e:
-            logger.error(f"Ошибка валидации вакансии: {e}")
-            raise
-
     def format_salary(self) -> str:
+        """
+        Форматирование зарплаты
+
+        :return: Отформатированная строка зарплаты
+        """
         if self.salary is None or self.salary == 0:
             logger.info(f"Зарплата для вакансии '{self._title}' не указана")
             return "Зарплата не указана"
 
-        formatted_salary = f"{self.salary:,.2f} руб.".replace(',', ' ')
+        formatted_salary = f"{self.salary:,.2f} руб.".replace(",", " ")
         logger.info(f"Отформатированная зарплата для вакансии '{self._title}': {formatted_salary}")
         return formatted_salary
 
@@ -107,22 +157,8 @@ class Vacancy:
 
     @title.setter
     def title(self, value: str) -> None:
-        """
-        Setter для свойства title с валидацией
-
-        :param value: Новое значение заголовка
-        """
-        try:
-            # Проверяем, что после удаления пробелов заголовок не пустой
-            if not value or not value.strip():
-                logger.warning("Попытка установить пустое название вакансии")
-                raise ValueError("Название вакансии не может быть пустым")
-
-            self._title = value.strip()
-            logger.info(f"Заголовок вакансии успешно установлен: {self._title}")
-        except ValueError as e:
-            logger.error(f"Ошибка при установке заголовка: {e}")
-            raise
+        self._title = self._validate_title(value)
+        logger.info(f"Заголовок вакансии успешно установлен: {self._title}")
 
     @property
     def url(self) -> str:
@@ -130,22 +166,8 @@ class Vacancy:
 
     @url.setter
     def url(self, value: str) -> None:
-        """
-        Setter для свойства url с валидацией
-
-        :param value: Новый URL
-        """
-        try:
-            # Проверяем, что после удаления пробелов URL не пустой
-            if not value or not value.strip():
-                logger.warning("Попытка установить пустой URL вакансии")
-                raise ValueError("URL вакансии не может быть пустым")
-
-            self._url = value.strip()
-            logger.info(f"URL вакансии успешно установлен: {self._url}")
-        except ValueError as e:
-            logger.error(f"Ошибка при установке URL: {e}")
-            raise
+        self._url = self._validate_url(value)
+        logger.info(f"URL вакансии успешно установлен: {self._url}")
 
     @property
     def salary(self) -> Optional[float]:
@@ -153,30 +175,7 @@ class Vacancy:
 
     @salary.setter
     def salary(self, value: Union[Dict[str, Any], float, None]) -> None:
-        """
-        Setter для свойства salary с валидацией
-
-        :param value: Новое значение зарплаты
-        """
-        try:
-            if isinstance(value, dict):
-                # Если зарплата из API HH
-                salary_from = value.get('from', 0) or 0
-                salary_to = value.get('to', 0) or 0
-                self._salary = (salary_from + salary_to) / 2 if salary_from or salary_to else 0.0
-                logger.info(
-                    f"Зарплата установлена из словаря: from {salary_from}, to {salary_to}, средняя {self._salary}")
-            elif value is None:
-                # Если зарплата None
-                self._salary = 0.0
-                logger.info("Зарплата установлена как 0 (значение None)")
-            else:
-                # Если зарплата передана напрямую
-                self._salary = float(value)
-                logger.info(f"Зарплата установлена напрямую: {self._salary}")
-        except Exception as e:
-            logger.error(f"Ошибка при установке зарплаты: {e}")
-            raise
+        self._salary = self._process_salary(value)
 
     @property
     def description(self) -> str:
@@ -184,23 +183,19 @@ class Vacancy:
 
     @description.setter
     def description(self, value: str) -> None:
-        """
-        Setter для свойства description с валидацией
-
-        :param value: Новое описание
-        """
-        original_value = value
-        # Используем strip() для удаления пробелов в начале и конце строки
-        self._description = value.strip() if value and value.strip() else 'Описание отсутствует'
-
+        self._description = self._validate_description(value)
         logger.info(f"Описание вакансии установлено: {self._description}")
 
-        if not original_value or not original_value.strip():
-            logger.warning(
-                "Установлено описание по умолчанию, "
-                "так как переданное значение было пустым или содержало только пробелы")
+    @property
+    def employer(self) -> str:
+        return self._employer
 
-    def __lt__(self, other: 'Vacancy') -> bool:
+    @employer.setter
+    def employer(self, value: Optional[str]) -> None:
+        self._employer = self._validate_employer(value)
+        logger.info(f"Работодатель установлен: {self._employer}")
+
+    def __lt__(self, other: "Vacancy") -> bool:
         """
         Сравнение вакансий по зарплате
 
@@ -211,13 +206,13 @@ class Vacancy:
             logger.warning(f"Попытка сравнения с объектом, не являющимся вакансией: {type(other)}")
             return NotImplemented
 
-        # Безопасное сравнение зарплат
-        self_salary = self.salary if self.salary is not None else 0
-        other_salary = other.salary if other.salary is not None else 0
+        self_salary = self.salary or 0
+        other_salary = other.salary or 0
 
         result = self_salary < other_salary
         logger.info(
-            f"Результат сравнения зарплат: {self._title} ({self_salary}) < {other._title} ({other_salary}) = {result}")
+            f"Результат сравнения зарплат: {self._title} ({self_salary}) < {other._title} ({other_salary}) = {result}"
+        )
 
         return result
 
@@ -227,6 +222,4 @@ class Vacancy:
 
         :return: Строка с информацией о вакансии
         """
-        repr_string = f"Vacancy(title={self._title}, salary={self._salary})"
-
-        return repr_string
+        return f"Vacancy(title={self._title}, salary={self._salary})"

@@ -1,5 +1,7 @@
+import logging
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any
+from typing import Any, Dict, List, Optional
+
 from logger.logger import setup_logger
 
 
@@ -13,7 +15,14 @@ class AbstractAPI(ABC):
     - Успешное получение результатов (logging.info)
     - Обработка ошибок (logging.warning, logging.error)
     """
-    logger = setup_logger(__name__)
+
+    def __init__(self, logger: Optional[logging.Logger] = None) -> None:
+        """
+        Инициализация API.
+
+        :param logger: Экземпляр логгера (опционально).
+        """
+        self.logger = logger or setup_logger(__name__)
 
     @abstractmethod
     def get_vacancies(self, search_query: str, per_page: int = 50) -> List[Dict[str, Any]]:

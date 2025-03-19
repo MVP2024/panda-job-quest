@@ -1,11 +1,17 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 class AbstractStorage(ABC):
     """
     Абстрактный базовый класс для работы с хранилищем вакансий
     """
+
+    def __init__(self) -> None:
+        """
+        Инициализация абстрактного хранилища
+        """
+        self.vacancies: Optional[List[Any]] = None
 
     @abstractmethod
     def add_vacancy(self, vacancy: Any) -> None:
