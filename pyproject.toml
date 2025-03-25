@@ -1,29 +1,29 @@
-[project]
+[tool.poetry]
 name = "pandajobquest"
 version = "0.1.0"
-description = "PandaJobQuest: Ваш персональный навигатор в мире карьерных возможностей. Интеллектуальный сервис, который трансформирует поиск работы в простой и эффективный процесс"
-authors = [{ name = "Valery Medvedev", email = "walery.medvedev@gmail.com" }]
+description = "PandaJobQuest: Ваш персональный навигатор в мире карьерных возможностей..."
+authors = ["Valery Medvedev <walery.medvedev@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+packages = [
+    { include = "api" },
+    { include = "models" },
+    { include = "storage" },
+    { include = "tests" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pytest = "^8.0.0"
 requests = "^2.32.3"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
 pytest-cov = "^4.1.0"
 mypy = "^1.8.0"
 flake8 = "^7.0.0"
 black = "^24.2.0"
 isort = "^5.13.0"
-
-[tool.poetry.group.lint.dependencies]
-mypy = "^1.8.0"
-flake8 = "^7.0.0"
-black = "^24.2.0"
-isort = "^5.13.0"
+pytest = "^8.0.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -40,7 +40,6 @@ extend-exclude = '''
   | \.git
   | \.hg
   | \.mypy_cache
-  | \.tox
   | \.venv
   | build
   | dist
@@ -66,13 +65,20 @@ warn_unused_ignores = true
 show_error_codes = true
 strict_optional = true
 
+[tool.coverage.run]
+source = ["api", "models", "storage", "parsers"]
+omit = [
+    "tests/*",
+    "*/__init__.py",
+    "main.py"
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
-addopts = "-v --cov=src --cov-report=term-missing"
-
-[tool.coverage.run]
-omit = [
-    "src/check.py",
+addopts = "-v --cov=. --cov-report=term-missing"
+norecursedirs = [
+    "main.py",
+    "venv"
 ]
